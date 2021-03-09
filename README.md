@@ -37,6 +37,7 @@ distribution of mean 20 and sigma 10.</p>
 
 <h2> Further developments :</h2>
 <ul>
+  <li><strong>In mv_car use add_car and rm_car, since we forgot</strong></li>
   <li>Human readable interface (this one is pretty rough)</li>
   <li><s>Car increment simulation</s></li>
   <li>Different path generation modes (in->out, out->in, user selection, random)</li>
