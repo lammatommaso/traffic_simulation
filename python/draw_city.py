@@ -27,16 +27,17 @@ for i in range (0,100):
                 n_edges.append((i+1,j+1))
 
 
-degree = []
+dead_nodes = []
 for i in range (0,100):
     deg = 0
     for j in range (0,100):
         deg+=city.adj_matrix.item(i,j)-city.adj_matrix.item(j,i)
-    degree.append(deg)
-
+    if abs(deg) == 4: #Vede solo quelli interni
+        dead_nodes.append(i+1)
 
 pos=nx.get_node_attributes(G,'pos')
 nx.draw_networkx_nodes(G,pos,node_color='white',edgecolors='black', node_size=20)
+nx.draw_networkx_nodes(G,pos,nodelist=dead_nodes,node_color='red',edgecolors='black', node_size=20)
 nx.draw_networkx_edges(G,pos,edgelist=di_edges,arrowstyle='-')
 nx.draw_networkx_edges(G,pos, edgelist=n_edges, arrowstyle='->')
 plt.savefig('city.png')
