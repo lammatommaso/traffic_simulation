@@ -11,6 +11,7 @@ class Road
     static short _gaussian_sigma;
     static short _min_road_length;
     static short _max_road_length;
+    short _width;
   public:
     Road();
     Road(short car_number);
@@ -22,6 +23,8 @@ class Road
     static short get_gaussian_sigma();
     static short get_min_road_length();
     static short get_max_road_length();
+    short get_width()const;
+    void set_width(short width);
     void add_car();
     void rm_car();
 };

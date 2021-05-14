@@ -83,16 +83,20 @@ void Simulator::_mv_car(int car_index)
     Node next_node = _find_next(car_index);
     if(_car_vector[car_index].car->get_offset()<_find_road(car_index).get_road_length())
     {                
-        bool can_move = 1;
+        int car_in_front = 0;
+        short width = _find_road(car_index).get_width();
         for(int i=0;i<_car_number;i++)
         {
             if(_car_vector[car_index].position.get_index() == _car_vector[i].position.get_index() &&  _find_next(car_index).get_index() == _find_next(i).get_index())
             {
-                can_move = _car_vector[car_index].car->get_offset() != _car_vector[i].car->get_offset() - 1;
-                if(can_move == 0) break;
+                if(_car_vector[car_index].car->get_offset() == _car_vector[i].car->get_offset() - 1)
+                {
+                    car_in_front++;
+                }
+                if(car_in_front > width) break;
             }
         }
-        if(can_move)
+        if(car_in_front <= width)
         {
             _car_vector[car_index].car->move_forward();
         }

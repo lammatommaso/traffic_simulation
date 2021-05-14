@@ -1,6 +1,8 @@
 #include "city.h"
 #include<cassert>
 
+short City::_oneway_width = 0;
+
 void City::_floyd_warshall()
 {
     for (int i = 0; i < _n_rows*_n_coloumns; i++)
@@ -90,6 +92,7 @@ City::City(short righe, short colonne, float oneway_fraction):_n_rows(righe), _n
                     if (r/RAND_MAX > oneway_fraction)
                     {
                         _adj_matrix[j][i] = Road(0);
+                        _adj_matrix[j][i].set_width(City::_oneway_width);
                         local_roads++;
                     } 
                     else 
@@ -109,6 +112,7 @@ City::City(short righe, short colonne, float oneway_fraction):_n_rows(righe), _n
                     else 
                     {
                         _adj_matrix[i][j] = Road(-1);
+                        _adj_matrix[i][j].set_width(City::_oneway_width);
                         local_oneway_roads++;
                     }
                 }
@@ -116,7 +120,9 @@ City::City(short righe, short colonne, float oneway_fraction):_n_rows(righe), _n
             else 
             {
                 _adj_matrix[i][j] = Road(-1);
+                _adj_matrix[i][j].set_width(City::_oneway_width);
                 _adj_matrix[j][i] = Road(-1);
+                _adj_matrix[j][i].set_width(City::_oneway_width);
             }
         }
     }
@@ -154,4 +160,8 @@ Node City::get_path(short i, short j)const
 short City::get_distance(short i, short j)const
 {
     return _distance[i][j];
+}
+void City::set_oneway_width(short oneway_width)
+{
+    _oneway_width = oneway_width;
 }

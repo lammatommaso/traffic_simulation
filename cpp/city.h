@@ -19,6 +19,9 @@ class City
     short _n_coloumns;
     float _oneway_fraction;
   public:
+
+    static short _oneway_width;
+
     City();
     City(short n_rows, short n_coloumns, float oneway_fraction);
     std::list<Node> print_path(Node source, Node destination);
@@ -29,6 +32,7 @@ class City
     Node get_node(short i)const;
     Node get_path(short i, short j)const;
     short get_distance(short i, short j)const;
+    static void set_oneway_width(short oneway_width);
 };
 
 #endif
