@@ -1,0 +1,96 @@
+\documentclass[main.tex]{subfiles}
+\begin{document}
+\subsection{Algoritmo di Floyd-Warshall}
+
+Dato in inpout un grafo \(G=(V,E)\) e una funzione \(w:E(G)\to R\) che assegna pesi agli archi del grafo (anche negativi) , e \(V(G)={1,2,3,...,n}\)
+Dall'esecuzione dell'algoritmo, otteniamo in output la matrice quadrata \(n \times n\) contenente i costi dei cammini minimi per ogni coppia di vertici del grafo:
+\(D^{(n)}\) con \(d^{(n)}_{(i,j)}\) pari al costo di un cammino minimo tra \(i\) e  \(j\).
+Abbiamo bisogno poi, per la ricostruzione del cammino, di una matrice di appoggio \(P_{i,j,}\) contenente  il nodo predecessore per la ricostruzione del cammino.
+Utilizza la programmazione dinamica (ossia per ogni passo, il programma prende una decisione).
+\\
+\\
+\textit{Pseudocodice dell'algoritmo:}
+\\
+\\
+\textbf{Inizializzazione:}
+\\
+Pongo a 0 di tutti i valori di \(D^{n}\)
+\begin{lstlisting}
+for i = 1 to n:
+    for j = 1 to n:
+        dist[i][j] = weight(i,j)
+\end{lstlisting}
+con \textbf{weight} funzione che riporta il peso dell'arco tra il nodo \(i\) e il nodo \(j\), o \(\infty\) se l'arco non esiste.
+\\
+Nello pseudocodice, la matrice \(D^{n}\) prende il nome di dist[i][j]
+\\
+\textbf{Calcolo dei cammini minimi tra le coppie:}
+\begin{lstlisting}
+floydWarshall(int [0..n, 0..n] dist) { 
+	for h = 1 to n:
+    	for i = 1 to n:
+        	j = 1 to n :
+            	if (dist[i][j] > dist[i][h] + dist[h][j])
+                	dist[i][j] := dist[i][h] + dist[h][j]
+\end{lstlisting}
+Al termine abbiamo il peso del cammino tra ogni coppia di nodi, ma vogliamo sapere quali nodi assieme formano i cammini.
+\\
+\textbf{Ricostruzione del cammino:}
+\\
+Usiamo un'altra struttura dati quindi, nella quale memorizziamo il predecesore di j che li collega. La matrice in questione è pred[i][j].
+\begin{lstlisting}
+int [0..n, 0..n] dist;
+int [0..n, 0..n] pred;
+for i = 1 to n
+    for j = 1 to n
+        dist[i][j] = Weight(i,j)
+        pred[i][j] = i
+
+floyd-warshall
+for h =1 to n
+    for i = 1 to n
+        for j = 1 to n
+            if (dist[i][j] > dist[i][h] + dist[h][j]) then
+                dist[i][j] := dist[i][h] + dist[h][j];
+                pred[i][j] := pred[h][j];
+            endif
+        endfor
+    endfor
+endfor
+\end{lstlisting}
+La complessità, sia nel caso migliore temporalmente che nel caso peggiore, è \(O(|V|^3)\).
+La scelta è ricaduta su Floyd-Warshall in quanto questo in una sola esecuzione calcola i cammini minimi prendendo come sorgenti ogni nodo del grafo, a differenza di Dijkstra e Bellman-Ford che lo calcolano da una singola sorgente, ad ogni esecuzione dell'algoritmo.
+Non avendo cicli negativi all'interno del grafo, l'algoritmo non fallisce mai.
+
+
+
+
+\subsection{Electron}
+Electron è un framework sviluppato da github, la cui prima versione risale al 2013. E quindi oramai un prodotto maturo, e sufficientemente affidabile. A riprova di ciò, molte note applicazioni usate tutti i giorni da milioni di utenti sono create con questa tecnologia (Microsoft Teams e Atom sono alcuni tra gli esempi più noti \cite{electronapps}).
+
+Electron serve per creare applicazioni per desktop basate su tecnologie web; più nel concreto, consiste di un browser chromium - che permette la visualizzazione dell'app - e dell'ambiente server Node.js - dove viene scritta la logica dell'app - , il che consente di creare un vero e proprio "sito web" che può girare su qualsiasi ambiente desktop (Linux, MacOS e Windows) per il quale l'applicazione sia stata compilata \cite{electrondocs}. 
+
+In questo progetto, è stato scelto per la facilità con cui è possibile realizzare la grafica in HTML5, javascript e css, la portabilità e la possibilità di usare codice C++ all'interno del server Node.js. Infatti, nonostante Node.js sia basato su javascript, è possibile creare dei "moduli" di codice nativo in C++, che vengono poi compilati e usati dal server. 
+
+La struttura del progetto su Electron è quindi la seguente:
+\begin{itemize}
+    \item \textbf{codice del server}: il file \texttt{main.js} e i file nella cartella \texttt{javascript} contengono codice per la gestione del server;
+    \item \textbf{codice del simulatore}: il cuore del progetto è contenuto nella cartella \texttt{cpp}, contiene i sorgenti in C++ che sono il "cuore" del progetto;
+    \item \textbf{grafica}: i file relativi alla grafica, che sono in formato html, css e javascript sono contenuti nella cartella \texttt{html}.
+\end{itemize}
+
+\subsubsection{Threading}
+L'applicazione ha due thread, gestiti dal server; questo perché se si eseguisse la simulazione sul thread principale, che è responsabile anche della gestione della grafica, l'applicazione diventerebbe \textit{unresponsive}. La soluzione è stata quindi quella di creare un nuovo thread dove eseguire il codice in C++, per permettere all'utente di continuare ad interagire con l'applicazione. 
+
+\subsubsection{Librerie javascript per grafica}
+Per la grafica sono state usate due librerie fondamentali, una per la rappresentazione dei grafi-città e una generica per la rappresentazione di box, bottoni e altri elementi grafici. 
+
+\paragraph{Materialize}
+
+Per semplificare la gestione della grafica nell'interfaccia, abbiamo optato per l'utilizzo di \textbf{materialize} \cite{materialize}, che è un framework CSS basato su Material Design, lo standard grafico messo a punto da Google per lo sviluppo di interfacce user friendly e coerenti. Questo consente di avere oggetti esteticamente appaganti e responsive, con un sistema di impaginazione a righe/colonne automatico, che aiuta nell'allestimento delle varie pagine.
+
+\paragraph{sigma} 
+
+Sigma.js è una libreria opensource, che serve per creare grafi \cite{sigmajs}. La versione da noi usata è la v1.2.0, la quale non è l'ultima disponibile, ma la più stabile. Questa libreria permette di visualizzare grafi nel formato GEXF \cite{gexf}, funzionalità che non è stata usata nel progetto, ma che è stata tenuta in considerazione in quanto potenzialmente molto utile in sviluppi futuri. Per ulteriori informazioni si veda la sezione apposita sugli sviluppi futuri  
+\ref{section:sviluppi}.
+\end{document}

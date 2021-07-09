@@ -1,0 +1,56 @@
+\documentclass[main.tex]{subfiles}
+\begin{document}
+\subsection{Analisi città esistenti}
+È possibile, oltre che interessante, effettuare simulazioni sul traffico su città esistenti: 
+
+step 1. ottenere una rappresentazione a grafico della città; si può fare con geojson e il progetto openstreetmap, oppure https://www.cityjson.org/datasets/, oppure [cerca su google roba a caso] oppure [progetto che non mi ricordo]
+
+step 1.1: conversione geojson -> gexf http://ignacioarnaldo.github.io/OpenStreetMap2Graph/
+sorgenti progetto: https://github.com/ignacioarnaldo/OpenStreetMap2Graph
+
+step 2. creare la matrice di adiacenza compatibile col nostro programma (molto facile farlo da gexf)
+
+step 3. visualizzare il grafico: gexf 
+\\
+\\
+GeoJSON è un formato per la memorizzazione di geometrie spaziali, nel quale abbiamo gli attributi descritti attraverso la JavaScript object notation.
+Possiamo rappresentare punti, spezzate, geometrie e collezioni che le contengono.
+\\
+\\
+\textbf{Esempio:}
+\begin{lstlisting}
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [11.1215698,46.0677293]
+      },
+      "properties": {
+        "name": "Fontana dell'Aquila"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+           [11.1214686,46.0677385],[11.121466,46.0677511],[11.1213806,46.0681452],          
+           [11.1213548,46.0682642],[11.1213115,46.0684385],[11.1212897,46.0685261],
+           [11.1212678,46.0686443]
+        ]
+      },
+      "properties": {
+        "lanes": 1,
+        "name": "Via Rodolfo Belenzani"
+      }
+    }
+  ]
+}
+\end{lstlisting}
+Si rivela quindi un buon formato per rappresentare il grafo di una città tramite archi e nodi.
+Inoltre grazie alla sua flessibilità è possibile trovare online città reali, costruite in questo formato.
+geojson, formato strano usato da libreria javascript 
+\end{document}
