@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2021.7.9)  9 JUL 2021 11:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2021.7.9)  9 JUL 2021 16:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -403,40 +403,68 @@ Package: verbatim 2014/10/28 v1.5q LaTeX2e package for verbatim enhancements
 \every@verbatim=\toks18
 \verbatim@line=\toks19
 \verbatim@in@stream=\read1
+))
+(/usr/share/texlive/texmf-dist/tex/latex/tools/enumerate.sty
+Package: enumerate 2015/07/23 v3.00 enumerate extensions (DPC)
+\@enLab=\toks20
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/color.sty
+Package: color 2016/07/10 v1.1e Standard LaTeX Color (DPC)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package color Info: Driver file: pdftex.def on input line 147.
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
 )) (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
 \c@lstlisting=\count101
-LaTeX Info: Redefining \it@ocap on input line 11.
-LaTeX Info: Redefining \it@ccap on input line 11.
-
+LaTeX Info: Redefining \it@ocap on input line 16.
+LaTeX Info: Redefining \it@ccap on input line 16.
 
 File italian.ldf warning: 
 italian.ldf    With OT1 encoding guillemets are poorly faked
 italian.ldf    Use T1 encoding
 italian.ldf    or specify a font with command \CaporaliFrom
 italian.ldf    See the documentation concerning the babel-italian typesetting 
-italian.ldf    on input line 11.
+italian.ldf    on input line 16.
 
+(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count102
+\scratchdimen=\dimen108
+\scratchbox=\box28
+\nofMPsegments=\count103
+\nofMParguments=\count104
+\everyMPshowfont=\toks21
+\MPscratchCnt=\count105
+\MPscratchDim=\dimen109
+\MPnumerator=\count106
+\makeMPintoPDFobject=\count107
+\everyMPtoPDFconversion=\toks22
+)
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 13.
+(Font)              <12> on input line 18.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 13.
+(Font)              <8> on input line 18.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 13.
-(./main.toc
+(Font)              <6> on input line 18.
+ (./main.toc
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <7> on input line 4.
 LaTeX Font Info:    External font `cmex10' loaded for size
@@ -449,12 +477,12 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
 (./introduzione.tex
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 44.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 32.
  (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 44.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 32.
 
 [2]) (./struttura.tex) (./informatici.tex
 Underfull \hbox (badness 10000) in paragraph at lines 5--18
@@ -478,28 +506,28 @@ Overfull \hbox (21.00372pt too wide) in paragraph at lines 34--35
 [][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-
+[4]
 Overfull \hbox (3.00354pt too wide) in paragraph at lines 53--54
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-LaTeX Warning: Citation `electronapps' on page 4 undefined on input line 69.
+LaTeX Warning: Citation `electronapps' on page 5 undefined on input line 69.
 
-[4]
 
 LaTeX Warning: Citation `electrondocs' on page 5 undefined on input line 71.
 
+[5]
 
-LaTeX Warning: Citation `materialize' on page 5 undefined on input line 90.
-
-
-LaTeX Warning: Citation `sigmajs' on page 5 undefined on input line 94.
+LaTeX Warning: Citation `materialize' on page 6 undefined on input line 90.
 
 
-LaTeX Warning: Citation `gexf' on page 5 undefined on input line 94.
+LaTeX Warning: Citation `sigmajs' on page 6 undefined on input line 94.
 
-) [5] (./sviluppi.tex
+
+LaTeX Warning: Citation `gexf' on page 6 undefined on input line 94.
+
+) (./sviluppi.tex
 Overfull \hbox (3.44513pt too wide) in paragraph at lines 6--7
 \OT1/cmr/m/n/10 geo-j-son e il pro-get-to open-street-map, op-pu-re https://www
 .cityjson.org/datasets/,
@@ -521,12 +549,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 13--21
 
  []
 
-
+[6]
 Overfull \hbox (147.005pt too wide) in paragraph at lines 40--41
 [][][][] 
  []
 
-[6]
+
 Overfull \hbox (153.00507pt too wide) in paragraph at lines 41--42
 [][][][] 
  []
@@ -537,13 +565,13 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 3146 strings out of 494912
- 39054 string characters out of 6180267
- 114883 words of memory out of 5000000
- 6455 multiletter control sequences out of 15000+600000
+ 3678 strings out of 494912
+ 46158 string characters out of 6180267
+ 119981 words of memory out of 5000000
+ 6971 multiletter control sequences out of 15000+600000
  8409 words of font info for 30 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 27i,6n,32p,958b,1580s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 27i,6n,32p,954b,1593s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texl
@@ -555,7 +583,7 @@ ublic/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
 sfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
 /cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
 tt10.pfb>
-Output written on main.pdf (7 pages, 149926 bytes).
+Output written on main.pdf (7 pages, 151131 bytes).
 PDF statistics:
  72 PDF objects out of 1000 (max. 8388607)
  51 compressed objects within 1 object stream

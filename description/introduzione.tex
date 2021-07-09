@@ -6,8 +6,10 @@
 
 Il progetto è finalizzato alla simulazione del traffico su una città modellizzata come un grafo diretto, ovvero con doppi sensi e sensi unici.
 La domanda che ci siamo posti all' inizio della programmazione era se in un qualche modo i sensi unici potessero essere vantaggiosi in alcune condizioni
-rispetto ai doppi sensi a parità di capienza, perché semplicemente sostituire due corsie alternate con una sola corsia diminuirebbe la superficie della città
-e a parità di numero di automobili aumenterebbe la densità e porterebbe sicuramente ad uno svantaggio.
+rispetto ai doppi sensi.
+Semplicemente sostituire due corsie alternate con una sola corsia diminuirebbe la superficie della città
+e a parità di numero di automobili aumenterebbe la densità e porterebbe sicuramente ad uno svantaggio, quindi nella Simulazione
+lasciamo all'utente la possibilità di scegliere il numero di corsie dei sensi unici.
 
 \subsection{Modello}
 
@@ -23,7 +25,30 @@ alla singola automobile di entrare in una casella che contenga un numero di macc
 Ogni automobile conta il numero di volte in cui passa da una casella a quella successiva e anche il numero di volte in cui
 è costretta a fermarsi a causa del traffico.
 
-\subsection{Modalità e parametri della simulazione }
+\subsection{Parametri della Simulazione }
+
+Questo modello ha molti parametri liberi che lo rendono molto flessibile ma possono nascondere effetti che sono osservabili sono in alcuni range di 
+tali parametri. 
+I parametri sono i seguenti:
+\begin{itemize}
+    \item \bb{Numero di righe di nodi}
+    \item \bb{Numero di colonne di nodi}
+    \item \bb{Numero di automobili}
+    \item \bb{Numero di corsie dei sensi unici}
+    \item \bb{Probabilità di generare un senso unico}
+    \item \bb{Statistiche delle strade}
+        \begin{enumerate}[(i)]
+            \item Lunghezza massima
+            \item Lunghezza minima
+            \item Media delle lunghezze
+            \item Deviazione standard delle lunghezze
+        \end{enumerate}
+\end{itemize}
+
+Il parametro di controllo del traffico, nel codice indicato come \ii{traffic index}, è definito come
+\[ t =  \frac{\langle p \rangle + \langle s \rangle}{\langle p \rangle}, \]
+
+{\color{red} \underline{Qui raga dobbiamo capire cosa scrivere}
 
 L'applicazione permette di fare due tipi di simulazione, una grafica e una "batch" (non grafica); in quella batch si può scegliere tra due simulazioni, "car increment" e bla bla bla
 
@@ -34,25 +59,25 @@ L'applicazione permette di fare due tipi di simulazione, una grafica e una "batc
 % \subsubsection{Modalità grafica}
 % La modalità grafica permette di costruire una simulazione scegliendo tra diversi parametri; questi sono:
 % \begin{itemize}
-%     \item \textbf{Dimensione} del grafo (numero righe, numero colonne)
-%     \item \textbf{Lunghezza} delle strade (minima e massima)
-%     \item \textbf{Percentuale di sensi unici}, tra 0 (nessun senso unico) e 1 (solo sensi unici)
-%     \item \textbf{Numero di corsie} per strada
-%     \item \textbf{$\sigma$, media} gaussiana %TODO
+%     \item \bb{Dimensione} del grafo (numero righe, numero colonne)
+%     \item \bb{Lunghezza} delle strade (minima e massima)
+%     \item \bb{Percentuale di sensi unici}, tra 0 (nessun senso unico) e 1 (solo sensi unici)
+%     \item \bb{Numero di corsie} per strada
+%     \item \bb{$\sigma$, media} gaussiana %TODO
 % \end{itemize}
 
 Dopo aver scelto questi parametri, l'utente vedrà un grafo dove potrà selezionare quali sono i nodi di partenza e di arrivo, dove si genereranno e cercheranno di arrivare le macchine. Sono disponibili alcuni preset, ma l'utente può selezionare i nodi a piacere. 
 
 Infine, quando si avvierà effettivamente la simulazione, l'utente vedrà colorarsi gli archi - le strade - a seconda della loro occupazione:
 \begin{itemize}
-    \item \textbf{Strada blu}: la strada è vuota o contiene una macchina
-    \item \textbf{Strada verde}: la strada è occupata al massimo al 50\% della capacità
-    \item \textbf{Strada arancione}: l'occupazione della strada è tra il 50\% e il 75\% della capacità 
-    \item \textbf{Strada rossa}: la strada è occupata per più del 75\%.
+    \item \bb{Strada blu}: la strada è vuota o contiene una macchina
+    \item \bb{Strada verde}: la strada è occupata al massimo al 50\% della capacità
+    \item \bb{Strada arancione}: l'occupazione della strada è tra il 50\% e il 75\% della capacità 
+    \item \bb{Strada rossa}: la strada è occupata per più del 75\%.
 \end{itemize}
 
-La scelta di non rappresentare direttamente le strade vuote è stata determinata dal meccanismo con cui le strade sono colorate: infatti, il server restituisce al "client", la parte di applicazione responsabile della visualizzazione grafica, le strade che hanno almeno una macchina; il client controlla poi il rapporto tra l'occupazione della strada e la dimensione della stessa, e a seconda del valore colora gli archi-strade. Questo permette al client di ricevere solo le strade che hanno \textit{almeno} una macchina, e non \textbf{tutte} le strade; infatti, la cardinalità delle strade che sono occupate è decisamente inferiore alla cardinalità dell'insieme di tutti archi del grafo, e questo permette un aumento delle prestazioni - in quanto bisogna controllare meno archi - al costo di una perdita minima di precisione, in quanto le strade blu possono essere vuote o contenere una sola macchina. 
+La scelta di non rappresentare direttamente le strade vuote è stata determinata dal meccanismo con cui le strade sono colorate: infatti, il server restituisce al "client", la parte di applicazione responsabile della visualizzazione grafica, le strade che hanno almeno una macchina; il client controlla poi il rapporto tra l'occupazione della strada e la dimensione della stessa, e a seconda del valore colora gli archi-strade. Questo permette al client di ricevere solo le strade che hanno \textit{almeno} una macchina, e non \bb{tutte} le strade; infatti, la cardinalità delle strade che sono occupate è decisamente inferiore alla cardinalità dell'insieme di tutti archi del grafo, e questo permette un aumento delle prestazioni - in quanto bisogna controllare meno archi - al costo di una perdita minima di precisione, in quanto le strade blu possono essere vuote o contenere una sola macchina. 
 
-Le strade blu quindi rappresentano sostanzialmente quelle strade che sono state occupate dalle macchine, per permette all'utente di visualizzare i percorsi compiuti da queste. 
+Le strade blu quindi rappresentano sostanzialmente quelle strade che sono state occupate dalle macchine, per permette all'utente di visualizzare i percorsi compiuti da queste. }
 
 \end{document}
