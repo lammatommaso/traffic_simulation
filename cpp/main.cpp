@@ -95,7 +95,7 @@ int main()
    for(int i=1; i <=3; i++)
    {
       City::set_oneway_width(i);
-      std::string sim_dir = "/home/tommaso/traffic_simulation/width"+std::to_string(i)+"/";
+      std::string sim_dir = "/home/tommaso/simulations/width"+std::to_string(i)+"/";
       oneway_increment_simulation(sim_dir,0.1,4000,5,5);
    }
 }
