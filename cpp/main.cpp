@@ -87,7 +87,7 @@ void car_increment_simulation(int city_number, std::string sim_dir, short min_ca
    simdata.close();
 
    std::ofstream check;
-   check.open("simulation_ended");
+   check.open("/home/tommaso/simulation_ended");
    check.close();
 
 }
