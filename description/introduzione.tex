@@ -16,8 +16,8 @@ All'inizio della simulazione la matrice di adiacenza è creata e tale probabilit
 Le strade sono modellizzate come dei contenitori di automobili che sanno soltanto il numero di automobili che contengono, però dato che ogni automobile conosce il suo offset sulla strada
 questo modello è analogo ad una strada visibile come un array in ogni casella del quale è possibile mettere al più un numero di macchine pari al numero di corsie della strada.
 
-In questa simulazione il traffico non è simulato tramite modelli fluidodinamici ma emerge da un controllo sul movimento delle automobili che impedisce
-di avere più automobili affiancate che corsie, il che è abbastanza realistico.
+In questa simulazione il traffico emerge da un controllo sul movimento delle automobili che impedisce
+alla singola automobile di entrare in una casella che contenga un numero di macchine pari al numero di corsie della strada.
 
 \subsection{Modalità e parametri della simulazione }
 
