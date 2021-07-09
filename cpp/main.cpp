@@ -86,6 +86,10 @@ void car_increment_simulation(int city_number, std::string sim_dir, short min_ca
            <<Numpy_Parser::print_var("execution_time", execution_time.count());
    simdata.close();
 
+   std::ofstream check;
+   check.open("simulation_ended");
+   check.close();
+
 }
 
 
