@@ -31,12 +31,15 @@ Questo modello ha molti parametri liberi che lo rendono molto flessibile ma poss
 tali parametri. 
 I parametri sono i seguenti:
 \begin{itemize}
-    \item \bb{Numero di righe di nodi}
-    \item \bb{Numero di colonne di nodi}
+    \item \bb{Numero di righe e colonne di nodi}:
+        La città è rappresentata come una griglia rettangolare di nodi e l'utente
+        può scegliere le dimensioni di questo rettangolo.
     \item \bb{Numero di automobili}
     \item \bb{Numero di corsie dei sensi unici}
-    \item \bb{Probabilità di generare un senso unico}
-    \item \bb{Statistiche delle strade}
+    \item \bb{Probabilità di generare un senso unico}:
+        Questo parametro permette di controllare a priori la frazione di sensi unici nella città generata.
+    \item \bb{Statistiche delle strade}:
+        Le lunghezze delle strade sono generate da una distribuzione gaussiana troncata definita dai seguenti parametri.
         \begin{enumerate}[(i)]
             \item Lunghezza massima
             \item Lunghezza minima
@@ -47,6 +50,11 @@ I parametri sono i seguenti:
 
 Il parametro di controllo del traffico, nel codice indicato come \ii{traffic index}, è definito come
 \[ t =  \frac{\langle p \rangle + \langle s \rangle}{\langle p \rangle}, \]
+dove $p$ è il numero di volte in cui l'automobile si è mossa alla casella successiva e $s$ è il numero di volte in cui ha dovuto
+fermarsi a causa del traffico.
+
+L'indice di traffico $t$ rappresenta nel nostro modello il rapporto tra i tempi reali di percorrenza e quelli ideali, perciò ci aspettiamo che 
+essso sia sempre maggiore o uguale a $1$.
 
 {\color{red} \underline{Qui raga dobbiamo capire cosa scrivere}
 

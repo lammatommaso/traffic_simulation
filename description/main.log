@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2021.7.9)  9 JUL 2021 16:49
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2021.7.9)  9 JUL 2021 17:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -477,14 +477,14 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
 (./introduzione.tex
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 32.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 34.
  (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 32.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 34.
 
-[2]) (./struttura.tex) (./informatici.tex
+[2] [3]) (./struttura.tex) (./informatici.tex
 Underfull \hbox (badness 10000) in paragraph at lines 5--18
 
  []
@@ -494,9 +494,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 5--18
 
  []
 
-[3]
 LaTeX Font Info:    Try loading font information for OML+cmr on input line 33.
- (/usr/share/texlive/texmf-dist/tex/latex/base/omlcmr.fd
+(/usr/share/texlive/texmf-dist/tex/latex/base/omlcmr.fd
 File: omlcmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10> not available
@@ -527,7 +526,7 @@ LaTeX Warning: Citation `sigmajs' on page 6 undefined on input line 94.
 
 LaTeX Warning: Citation `gexf' on page 6 undefined on input line 94.
 
-) (./sviluppi.tex
+) (./sviluppi.tex [6]
 Overfull \hbox (3.44513pt too wide) in paragraph at lines 6--7
 \OT1/cmr/m/n/10 geo-j-son e il pro-get-to open-street-map, op-pu-re https://www
 .cityjson.org/datasets/,
@@ -549,7 +548,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 13--21
 
  []
 
-[6]
+
 Overfull \hbox (147.005pt too wide) in paragraph at lines 40--41
 [][][][] 
  []
@@ -559,19 +558,22 @@ Overfull \hbox (153.00507pt too wide) in paragraph at lines 41--42
 [][][][] 
  []
 
-) (./conclusioni.tex) [7] (./main.aux)
+[7]) (./conclusioni.tex) [8] (./main.aux)
 
 LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
  3678 strings out of 494912
  46158 string characters out of 6180267
- 119981 words of memory out of 5000000
+ 118981 words of memory out of 5000000
  6971 multiletter control sequences out of 15000+600000
  8409 words of font info for 30 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 27i,6n,32p,954b,1593s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 27i,6n,32p,954b,1588s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texl
@@ -583,10 +585,10 @@ ublic/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
 sfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
 /cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
 tt10.pfb>
-Output written on main.pdf (7 pages, 151131 bytes).
+Output written on main.pdf (8 pages, 154194 bytes).
 PDF statistics:
- 72 PDF objects out of 1000 (max. 8388607)
- 51 compressed objects within 1 object stream
+ 75 PDF objects out of 1000 (max. 8388607)
+ 53 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
