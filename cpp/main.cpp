@@ -95,11 +95,11 @@ void car_increment_simulation(int city_number, std::string sim_dir, short min_ca
 
 int main()
 {
-   Road::set_statistics(20,10,12,30);
-   for(int i=4; i <=5; i++)
+   Road::set_statistics(50,20,20,60);
+   for(int i=1; i <=5; i++)
    {
       City::set_oneway_width(i);
       std::string sim_dir = "/home/tommaso/simulations/width"+std::to_string(i)+"/";
-      oneway_increment_simulation(sim_dir,0.01,4000,5,5);
+      oneway_increment_simulation(sim_dir,0.01,7000,5,5);
    }
 }
