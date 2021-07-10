@@ -85,21 +85,17 @@ void car_increment_simulation(int city_number, std::string sim_dir, short min_ca
            <<Numpy_Parser::print_array("sigma_stops", sigma_stops)
            <<Numpy_Parser::print_var("execution_time", execution_time.count());
    simdata.close();
-
-   std::ofstream check;
-   check.open("/home/tommaso/simulation_ended");
-   check.close();
-
 }
 
 
 int main()
 {
    Road::set_statistics(50,20,20,60);
-   for(int i=1; i <=5; i++)
-   {
-      City::set_oneway_width(i);
-      std::string sim_dir = "/home/tommaso/simulations/width"+std::to_string(i)+"/";
-      oneway_increment_simulation(sim_dir,0.01,7000,5,5);
-   }
+   // for(int i=1; i <=5; i++)
+   // {
+   //    City::set_oneway_width(i);
+   //    std::string sim_dir = "/home/tommaso/simulations/width"+std::to_string(i)+"/";
+   //    oneway_increment_simulation(sim_dir,0.01,7000,5,5);
+   // }
+   car_increment_simulation(1,"/home/tommaso/simulations/car_increment/", 0, 10000, 20, 0, 5,5);
 }
