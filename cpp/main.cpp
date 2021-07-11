@@ -54,7 +54,7 @@ void car_increment_simulation(int city_number, std::string sim_dir, short min_ca
    Simulator simulator;
    simulator.set_car_number(min_car_number);
    simulator.create_city(n_rows, n_coloumns, oneway_fraction);
-
+   
    std::ofstream citydata;
    citydata.open(sim_dir+"city"+std::to_string(city_number)+".py");
    citydata<<simulator.print();
@@ -97,5 +97,5 @@ int main()
    //    std::string sim_dir = "/home/tommaso/simulations/width"+std::to_string(i)+"/";
    //    oneway_increment_simulation(sim_dir,0.01,7000,5,5);
    // }
-   car_increment_simulation(1,"/home/tommaso/simulations/car_increment/", 0, 10000, 20, 0, 5,5);
+   car_increment_simulation(1,"/home/tommaso/simulations/car_increment/", 10, 10000, 10, 0, 5,5);
 }

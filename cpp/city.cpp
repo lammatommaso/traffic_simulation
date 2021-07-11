@@ -1,5 +1,6 @@
 #include "city.h"
 #include<cassert>
+#include<iostream>
 
 short City::_oneway_width = 0;
 
