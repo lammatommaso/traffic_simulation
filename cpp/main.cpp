@@ -82,7 +82,7 @@ void car_increment_simulation(int city_number, std::string sim_dir, short min_ca
            <<Numpy_Parser::print_array("sigma_steps", sigma_steps)
            <<Numpy_Parser::print_array("mean_stops", mean_stops)
            <<Numpy_Parser::print_array("sigma_stops", sigma_stops)
-           <<Numpy_Parser::print_var("execution_time", execution_time.count());y_roads+local_roads);
+           <<Numpy_Parser::print_var("execution_time", execution_time.count());
    simdata.close();
 }
 
