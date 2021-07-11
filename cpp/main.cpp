@@ -72,7 +72,6 @@ void car_increment_simulation(int city_number, std::string sim_dir, short min_ca
       sigma_stops.push_back(simulator.get_result().stops_sigma);
    }
    
-
    auto stop = std::chrono::steady_clock::now();
    std::chrono::duration<float> execution_time = stop-start;   
    std::ofstream simdata;
@@ -83,14 +82,14 @@ void car_increment_simulation(int city_number, std::string sim_dir, short min_ca
            <<Numpy_Parser::print_array("sigma_steps", sigma_steps)
            <<Numpy_Parser::print_array("mean_stops", mean_stops)
            <<Numpy_Parser::print_array("sigma_stops", sigma_stops)
-           <<Numpy_Parser::print_var("execution_time", execution_time.count());
+           <<Numpy_Parser::print_var("execution_time", execution_time.count());y_roads+local_roads);
    simdata.close();
 }
 
 
 int main()
 {
-   Road::set_statistics(50,20,20,60);
+   Road::set_statistics(20,10,10,30);
    // for(int i=1; i <=5; i++)
    // {
    //    City::set_oneway_width(i);
