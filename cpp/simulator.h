@@ -41,7 +41,9 @@ class Simulator
     short _car_number;
     void _mv_car(int car_index);
     inline Node _find_next(int car_index)const;
+    inline Node _find_second_next(int car_index)const;
     inline Road _find_road(int car_index)const;
+    inline Road _find_next_road(int car_index)const;
     std::string print_car_data()const;
     std::string print_adj_matrix()const;
   public:

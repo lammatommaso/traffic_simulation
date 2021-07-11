@@ -59,6 +59,12 @@ Road Simulator::_find_road(int car_index)const
     return _city.get_road(_car_vector[car_index].position.get_index(),_find_next(car_index).get_index());
 }
 
+Road Simulator::_find_next_road(int car_index)const
+{     
+    return _city.get_road(_find_next(car_index).get_index(),_find_second_next(car_index).get_index());
+}
+
+
 Node Simulator::_find_next(int car_index)const
 {
     bool search_end = false;
@@ -78,9 +84,34 @@ Node Simulator::_find_next(int car_index)const
     return next_node;
 }
 
+Node Simulator::_find_second_next(int car_index)const
+{
+    bool search_end = false;
+    Node next_node;
+    int counter = 0;
+    for (Node n : _car_vector[car_index].path)
+    {
+        next_node = n;  
+        if(search_end)
+        {
+            counter++;
+        }  
+        if(counter == 2)
+        {
+            break;
+        }
+        if(n.get_index() == _car_vector[car_index].position.get_index())
+        {
+            search_end=true;
+        } 
+    }
+    return next_node;
+}
+
 void Simulator::_mv_car(int car_index)
 {
     Node next_node = _find_next(car_index);
+    Node second_next_node = _find_second_next(car_index);
     if(_car_vector[car_index].car->get_offset()<_find_road(car_index).get_road_length())
     {                
         int car_in_front = 0;
@@ -107,9 +138,28 @@ void Simulator::_mv_car(int car_index)
     }
     else
     {            
-        _car_vector[car_index].position = next_node;
-        _car_vector[car_index].car->move_forward();
-        _car_vector[car_index].car->reset_offset();
+        int car_in_front = 0;
+        for(int i=0;i<_car_number;i++)
+        {
+            if( _find_next(car_index).get_index() == _car_vector[i].position.get_index() &&  _find_second_next(car_index).get_index() == _find_next(i).get_index())
+            {
+                if(_car_vector[i].car->get_offset() == 0)
+                {
+                    car_in_front++;
+                }
+                if(car_in_front > _find_road(i).get_width()) break;
+            }
+        }
+        if(car_in_front <= _find_next_road(car_index).get_width())
+        {
+            _car_vector[car_index].position = next_node;
+            _car_vector[car_index].car->move_forward();
+            _car_vector[car_index].car->reset_offset();
+        }
+        else
+        {
+            _car_vector[car_index].car->halt();
+        }
     }
     if (_car_vector[car_index].position.get_index() ==  _car_vector[car_index].path.back().get_index())
     {
