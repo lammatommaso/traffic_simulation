@@ -97,5 +97,6 @@ int main()
    //    std::string sim_dir = "/home/tommaso/simulations/width"+std::to_string(i)+"/";
    //    oneway_increment_simulation(sim_dir,0.01,7000,5,5);
    // }
-   car_increment_simulation(2,"/home/tommaso/simulations/car_increment/", 1, 1000, 1, 0, 5,5);
+   for(int i=3; i <=4; i++){
+   car_increment_simulation(i,"/home/tommaso/simulations/car_increment/", 1, 1000, 1, 0, 5,5);}
 }
