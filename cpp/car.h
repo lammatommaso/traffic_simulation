@@ -27,6 +27,8 @@ class Car
     short get_steps()const;
     short get_stops()const;
     short get_offset()const;
+
+    void set_delay(int delay);
 };
 
 #endif

@@ -58,6 +58,8 @@ class Simulator
     std::vector<Car_Info> get_car_vector()const;
     void set_car_number(short car_number);
     std::string print()const;
+
+    void init_simulation();
 };
 
 #endif
