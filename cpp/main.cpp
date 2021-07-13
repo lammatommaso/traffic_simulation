@@ -98,5 +98,5 @@ int main()
    //    oneway_increment_simulation(sim_dir,0.01,7000,5,5);
    // }
    for(int i=1; i <=4; i++){
-   car_increment_simulation(i,"/home/tommaso/simulations/car_increment/", 1, 2000, 1, 0, 7,7);}
+   car_increment_simulation(i,"/home/tommaso/simulations/car_increment/", 1, 2000, 1, 0, 5,5);}
 }
