@@ -70,7 +70,6 @@ void car_increment_simulation(int city_number, std::string sim_dir, short min_ca
       sigma_steps.push_back(simulator.get_result().steps_sigma);
       mean_stops.push_back(simulator.get_result().stops_mean);
       sigma_stops.push_back(simulator.get_result().stops_sigma);
-      std::cout<<i<<"\n";
    }
    
    auto stop = std::chrono::steady_clock::now();
@@ -98,5 +97,7 @@ int main()
    //    oneway_increment_simulation(sim_dir,0.01,7000,5,5);
    // }
    for(int i=1; i <=200; i++){
-   car_increment_simulation(i,"/home/tommaso/simulations/car_increment/", 1, 2000, 1, 0, 5,5);}
+   car_increment_simulation(i,"/home/tommaso/simulations/car_increment/", 1, 2000, 1, 0, 7,7);
+   std::cout<<i<<"\n";
+   }
 }
