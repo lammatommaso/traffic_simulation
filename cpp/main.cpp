@@ -99,5 +99,5 @@ int main()
    // for(int i=1; i <=200; i++){
    // car_increment_simulation(i,"/home/tommaso/simulations/car_increment/", 1, 2000, 1, 0, 7,7);
    // std::cout<<i<<"\n";
-   }
+   
 }
