@@ -218,7 +218,7 @@ class set_source {
 };
 
 
-//set_source setsource = set_source();
+set_source setsource = set_source();
 
 void Simulator::create_path()
 {
@@ -235,7 +235,7 @@ void Simulator::create_path()
         //std::cout << source.get_index() << ' ' << destination.get_index() << std::endl;
         _car_vector[i].position = source;
         
-        // setsource.add_car(source.get_index(), _find_next(i).get_index(), i);
+        setsource.add_car(source.get_index(), _find_next(i).get_index(), i);
         
         _car_vector[i].path = _city.print_path(source, destination); //nel path manca il nodo sorgente!
         _car_vector[i].path.push_front(source);
@@ -264,27 +264,27 @@ void Simulator::create_path()
 // */
 
 
-// void Simulator::init_simulation(){
-//     for (int car_index = 0; car_index<_car_vector.size(); car_index++ ){
-//         auto car = _car_vector[car_index]; //.position.get_index()
-//         int source = car.position.get_index();
-//         int next = _find_next(car_index).get_index();
-//         std::list<int> _car_list = setsource.get_cars_at_source_next(source, next);
+void Simulator::init_simulation(){
+    for (int car_index = 0; car_index<_car_vector.size(); car_index++ ){
+        auto car = _car_vector[car_index]; //.position.get_index()
+        int source = car.position.get_index();
+        int next = _find_next(car_index).get_index();
+        std::list<int> _car_list = setsource.get_cars_at_source_next(source, next);
         
-//         int delay = 0;
-//         for (int c : _car_list){
+        int delay = 0;
+        for (int c : _car_list){
             
-//             _car_vector[c].car->set_delay(delay++);
+            _car_vector[c].car->set_delay(delay++);
             
-//         }
-//     }
-// }
+        }
+    }
+}
 
 void Simulator::simulation()
 {
     // std::cout<<"1"<<"\n";
     int counter = 0;
-    // init_simulation();
+    init_simulation();
     while (_cars_at_destination < _car_number)
     {
         std::sort(_car_vector.begin(), _car_vector.end(), order);
