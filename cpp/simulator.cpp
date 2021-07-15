@@ -291,6 +291,7 @@ void Simulator::simulation()
         std::sort(_car_vector.begin(), _car_vector.end(), order);
         for (int i = 0; i < _car_number; i++)
         { 
+            std::cout<<_car_vector[i].car->delay()<<"\n";
             if (!(_car_vector[i].car->get_at_destination()))
             {
                 if( _car_vector[i].car->get_delay() == 0)
@@ -302,12 +303,8 @@ void Simulator::simulation()
                     _car_vector[i].car->delay();
                 }
             }
-            else
-            {
-                continue;
-            }
         }  
-        std::cout<<_cars_at_destination<<"\n";
+        // std::cout<<_cars_at_destination<<"\n";
         counter++;
     }
     // std::cout<<"2"<<"\n";
