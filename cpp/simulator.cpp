@@ -276,6 +276,7 @@ void Simulator::init_simulation(){
         for (int c : _car_list){
             
             _car_vector[c].car->set_delay(delay++);
+            std::cout<<"ciao"<<"\n";
             
         }
     }
