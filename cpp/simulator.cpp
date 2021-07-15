@@ -150,16 +150,16 @@ void Simulator::_mv_car(int car_index)
                 if(car_in_front == _find_road(i).get_width()) break;
             }
         }
-        // if(car_in_front < _find_next_road(car_index).get_width()) -------> è qui il problema!!!!!!!!
-        // {
+        if(car_in_front < _find_next_road(car_index).get_width()) //-------> è qui il problema!!!!!!!!
+        {
             _car_vector[car_index].position = next_node;
             _car_vector[car_index].car->move_forward();
             _car_vector[car_index].car->reset_offset();
-        // }
-        // else
-        // {
-        //     _car_vector[car_index].car->halt();
-        // }
+        }
+        else
+        {
+            _car_vector[car_index].car->halt();
+        }
     }
     // std::cout<<_car_vector[car_index].position.get_index()<<" = "<< _car_vector[car_index].path.back().get_index()<<"\n";
     if (_car_vector[car_index].position.get_index() ==  _car_vector[car_index].path.back().get_index())
