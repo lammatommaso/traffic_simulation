@@ -22,12 +22,13 @@ void oneway_increment_simulation(std::string sim_dir,float increment, short car_
       simulator.create_path();
       simulator.simulation();
 
+      std::cout<<"oneway fraction : "<<i<<" COMPLETED"<<"\n";
+
       x.push_back(simulator.get_city().get_oneway_fraction());
       mean_steps.push_back(simulator.get_result().steps_mean);
       sigma_steps.push_back(simulator.get_result().steps_sigma);
       mean_stops.push_back(simulator.get_result().stops_mean);
       sigma_stops.push_back(simulator.get_result().stops_sigma);
-      std::cout<<"oneway fraction : "<<i<<" COMPLETED"<<"\n";
    }
    auto stop = std::chrono::steady_clock::now();
    std::chrono::duration<float> execution_time = stop-start;   
@@ -95,7 +96,7 @@ int main()
    for(int i=1; i <=5; i++)
    {
       std::string sim_dir = "/home/tommaso/simulations/oneway_increment/width3/";
-      oneway_increment_simulation(sim_dir,0.1,1000,5,5);
+      oneway_increment_simulation(sim_dir,0.1,10,5,5);
    }
    // for(int i=1; i <=200; i++){
    // car_increment_simulation(i,"/home/tommaso/simulations/car_increment/", 1, 2000, 1, 0, 7,7);
