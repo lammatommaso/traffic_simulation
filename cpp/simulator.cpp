@@ -151,7 +151,7 @@ void Simulator::_mv_car(int car_index)
                 if(car_in_front == _find_road(i).get_width()) break;
             }
         }
-        if(car_in_front < _find_next_road(car_index).get_width()) //-------> è qui il problema!!!!!!!!
+        if(car_in_front < _find_next_road(i).get_width()) //-------> è qui il problema!!!!!!!!
         {
             _car_vector[car_index].position = next_node;
             _car_vector[car_index].car->move_forward();
