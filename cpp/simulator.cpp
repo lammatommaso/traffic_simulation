@@ -218,7 +218,7 @@ class set_source {
 };
 
 
-set_source setsource = set_source();
+//set_source setsource = set_source();
 
 void Simulator::create_path()
 {
