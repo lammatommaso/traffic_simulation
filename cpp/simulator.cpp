@@ -146,6 +146,7 @@ void Simulator::_mv_car(int car_index)
                 if(_car_vector[i].car->get_offset() == 1) ///----------> era 0, ma con 1 funziona, non ha senso
                 {
                     car_in_front++;
+                    std::cout<<car_in_front<<"\n";
                 }
                 if(car_in_front == _find_road(i).get_width()) break;
             }
