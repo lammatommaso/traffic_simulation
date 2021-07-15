@@ -161,7 +161,7 @@ void Simulator::_mv_car(int car_index)
             _car_vector[car_index].car->halt();
         }
     }
-    std::cout<<_car_vector[car_index].position.get_index()<<" = "<< _car_vector[car_index].path.back().get_index()<<"\n";
+    // std::cout<<_car_vector[car_index].position.get_index()<<" = "<< _car_vector[car_index].path.back().get_index()<<"\n";
     if (_car_vector[car_index].position.get_index() ==  _car_vector[car_index].path.back().get_index())
     {
         _cars_at_destination++;
@@ -307,7 +307,7 @@ void Simulator::simulation()
                 continue;
             }
         }  
-        // std::cout<<_cars_at_destination<<"\n";
+        std::cout<<_cars_at_destination<<"\n";
         counter++;
     }
     // std::cout<<"2"<<"\n";
