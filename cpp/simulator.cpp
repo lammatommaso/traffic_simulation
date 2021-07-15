@@ -124,10 +124,10 @@ void Simulator::_mv_car(int car_index)
                 {
                     car_in_front++;
                 }
-                if(car_in_front > width) break;
+                if(car_in_front == width) break;
             }
         }
-        if(car_in_front <= width)
+        if(car_in_front < width)
         {
             _car_vector[car_index].car->move_forward();
         }
@@ -147,10 +147,10 @@ void Simulator::_mv_car(int car_index)
                 {
                     car_in_front++;
                 }
-                if(car_in_front > _find_road(i).get_width()) break;
+                if(car_in_front == _find_road(i).get_width()) break;
             }
         }
-        if(car_in_front <= _find_next_road(car_index).get_width())
+        if(car_in_front < _find_next_road(car_index).get_width())
         {
             _car_vector[car_index].position = next_node;
             _car_vector[car_index].car->move_forward();
