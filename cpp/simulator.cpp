@@ -143,7 +143,7 @@ void Simulator::_mv_car(int car_index)
         {
             if( _find_next(car_index).get_index() == _car_vector[i].position.get_index() &&  _find_second_next(car_index).get_index() == _find_next(i).get_index())
             {
-                if(_car_vector[i].car->get_offset() == 1) ///----------> era 0, ma con 1 funziona, non ha senso
+                if(_car_vector[i].car->get_offset() == 0 && _car_vector[i].car->get_delay() == 0) ///----------> era 0, ma con 1 funziona, non ha senso
                 {
                     car_in_front++;
                 }
@@ -317,7 +317,7 @@ void Simulator::simulation()
     init_simulation_two();
     while (_cars_at_destination < _car_number)
     {
-        std::sort(_car_vector.begin(), _car_vector.end(), order);
+        std::sort(_car_vector.begin(), _car_vector.end(), order); //-----------------> Quando chiamo il sort all'inizio che tutto ha offset 0 succedono cose molto strane.
         for (int i = 0; i < _car_number; i++)
         { 
             if(_car_vector[i].car->get_delay() != 0) std::cout<<_car_vector[i].car->get_delay()<<"\n";
