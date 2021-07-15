@@ -283,11 +283,36 @@ void Simulator::init_simulation(){
     }
 }
 
+void Simulator::init_simulation_two(){
+    std::vector<int>** car_list_matrix = new std::vector<int>*[_city.get_n_rows()*_city.get_n_coloumns()];
+    for( int i = 0; i < _city.get_n_rows()*_city.get_n_coloumns(); i++)
+    {
+        car_list_matrix[i] = new std::vector<int>[_city.get_n_rows()*_city.get_n_coloumns()];
+    }
+    for(int i=0; i<_car_vector.size();i++)
+    {
+        car_list_matrix[_car_vector[i].position.get_index()][_find_next(i).get_index()].push_back(i);
+    }
+    for( int i = 0; i < _city.get_n_rows()*_city.get_n_coloumns(); i++)
+    {
+        for( int j = 0; j <_city.get_n_rows()*_city.get_n_coloumns(); j++)
+           {
+                int delay = 0;
+                for(int car : car_list_matrix[i][j])
+                {
+                    _car_vector[car].car->set_delay(delay);
+                    delay++;
+                }
+           }
+    }
+
+}
+
 void Simulator::simulation()
 {
     // std::cout<<"1"<<"\n";
     int counter = 0;
-    init_simulation();
+    init_simulation_two();
     while (_cars_at_destination < _car_number)
     {
         std::sort(_car_vector.begin(), _car_vector.end(), order);

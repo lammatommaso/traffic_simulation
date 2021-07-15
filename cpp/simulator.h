@@ -60,6 +60,7 @@ class Simulator
     std::string print()const;
 
     void init_simulation();
+    void init_simulation_two();
 };
 
 #endif
