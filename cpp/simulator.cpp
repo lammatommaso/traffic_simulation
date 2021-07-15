@@ -320,7 +320,7 @@ void Simulator::simulation()
         std::sort(_car_vector.begin(), _car_vector.end(), order); //-----------------> Quando chiamo il sort all'inizio che tutto ha offset 0 succedono cose molto strane.
         for (int i = 0; i < _car_number; i++)
         { 
-            if(_car_vector[i].car->get_delay() != 0) std::cout<<_car_vector[i].car->get_delay()<<"\n";
+            // if(_car_vector[i].car->get_delay() != 0) std::cout<<_car_vector[i].car->get_delay()<<"\n";
             if (!(_car_vector[i].car->get_at_destination()))
             {
                 if( _car_vector[i].car->get_delay() == 0)
