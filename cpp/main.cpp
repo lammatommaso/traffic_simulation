@@ -72,6 +72,7 @@ void car_increment_simulation(int city_number, std::string sim_dir, short min_ca
       sigma_steps.push_back(simulator.get_result().steps_sigma);
       mean_stops.push_back(simulator.get_result().stops_mean);
       sigma_stops.push_back(simulator.get_result().stops_sigma);
+      std::cout<<i<<"\n";
    }
    
    auto stop = std::chrono::steady_clock::now();
