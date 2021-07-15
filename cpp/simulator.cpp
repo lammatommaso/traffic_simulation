@@ -283,6 +283,7 @@ void Simulator::init_simulation(){
 void Simulator::simulation()
 {
     int counter = 0;
+    init_simulation();
     while (_cars_at_destination < _car_number)
     {
         std::sort(_car_vector.begin(), _car_vector.end(), order);
