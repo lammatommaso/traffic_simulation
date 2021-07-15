@@ -222,6 +222,7 @@ class set_source {
 
 void Simulator::create_path()
 {
+    std::cout<<"create path"<<"\n";
     srand(time(NULL)); 
     for (int i = 0; i < _car_number; i++)
     {
