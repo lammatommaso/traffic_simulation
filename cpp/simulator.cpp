@@ -220,31 +220,31 @@ class set_source {
 
 //set_source setsource = set_source();
 
-// void Simulator::create_path()
-// {
-//     srand(time(NULL)); 
-//     for (int i = 0; i < _car_number; i++)
-//     {
-//         Node source, destination;
-//         do
-//         {
-//             source = _city.get_node(rand()%(_city.get_n_rows()*_city.get_n_coloumns()));
-//             destination = _city.get_node(rand()%(_city.get_n_rows()*_city.get_n_coloumns()));
-//         }
-//         while(source.get_index() == destination.get_index() || _city.get_path(source.get_index(),destination.get_index()).get_index() == -1);
-//         //std::cout << source.get_index() << ' ' << destination.get_index() << std::endl;
-//         _car_vector[i].position = source;
+void Simulator::create_path()
+{
+    srand(time(NULL)); 
+    for (int i = 0; i < _car_number; i++)
+    {
+        Node source, destination;
+        do
+        {
+            source = _city.get_node(rand()%(_city.get_n_rows()*_city.get_n_coloumns()));
+            destination = _city.get_node(rand()%(_city.get_n_rows()*_city.get_n_coloumns()));
+        }
+        while(source.get_index() == destination.get_index() || _city.get_path(source.get_index(),destination.get_index()).get_index() == -1);
+        //std::cout << source.get_index() << ' ' << destination.get_index() << std::endl;
+        _car_vector[i].position = source;
         
-//         setsource.add_car(source.get_index(), _find_next(i).get_index(), i);
+        // setsource.add_car(source.get_index(), _find_next(i).get_index(), i);
         
-//         _car_vector[i].path = _city.print_path(source, destination); //nel path manca il nodo sorgente!
-//         _car_vector[i].path.push_front(source);
+        _car_vector[i].path = _city.print_path(source, destination); //nel path manca il nodo sorgente!
+        _car_vector[i].path.push_front(source);
 
-//         /*for (auto it=_car_vector[i].path.begin(); it!=_car_vector[i].path.end(); ++it)
-//              std::cout << ' ' << (*it).get_index();
-//         std::cout << std::endl;*/
-//     }
-// }
+        /*for (auto it=_car_vector[i].path.begin(); it!=_car_vector[i].path.end(); ++it)
+             std::cout << ' ' << (*it).get_index();
+        std::cout << std::endl;*/
+    }
+}
 
 
 // /* 
