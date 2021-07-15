@@ -282,7 +282,7 @@ void Simulator::create_path()
 
 void Simulator::simulation()
 {
-    std::cout<<"1"<<"\n";
+    // std::cout<<"1"<<"\n";
     int counter = 0;
     // init_simulation();
     while (_cars_at_destination < _car_number)
@@ -299,10 +299,10 @@ void Simulator::simulation()
                 _car_vector[i].car->delay();
             }
         }  
-        std::cout<<_cars_at_destination<<"\n";
+        // std::cout<<_cars_at_destination<<"\n";
         counter++;
     }
-    std::cout<<"2"<<"\n";
+    // std::cout<<"2"<<"\n";
     float steps_mean = 0;
     float steps_squared_mean = 0;
     float stops_mean = 0;
