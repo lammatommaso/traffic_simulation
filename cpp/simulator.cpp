@@ -299,7 +299,7 @@ void Simulator::simulation()
                 _car_vector[i].car->delay();
             }
         }  
-        // std::cout<<_cars_at_destination<<"\n";
+        std::cout<<_cars_at_destination<<"\n";
         counter++;
     }
     // std::cout<<"2"<<"\n";
