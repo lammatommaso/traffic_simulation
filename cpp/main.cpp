@@ -93,13 +93,13 @@ int main()
 {
    Road::set_statistics(20,10,10,30);
    City::set_oneway_width(3);
-   for(int i=1; i <=5; i++)
-   {
-      std::string sim_dir = "/home/tommaso/simulations/oneway_increment/width3/";
-      oneway_increment_simulation(sim_dir,0.1,100,5,5);
-   }
-   // for(int i=1; i <=200; i++){
-   // car_increment_simulation(i,"/home/tommaso/simulations/car_increment/", 1, 2000, 1, 0, 7,7);
-   // std::cout<<i<<"\n";
+   // for(int i=1; i <=5; i++)
+   // {
+   //    std::string sim_dir = "/home/tommaso/simulations/oneway_increment/width3/";
+   //    oneway_increment_simulation(sim_dir,0.1,100,5,5);
+   // }
+   for(int i=1; i <=1; i++){
+   car_increment_simulation(i,"/home/tommaso/simulations/car_increment/", 1, 2000, 1, 0, 7,7);
+   std::cout<<i<<"\n";}
    
 }
