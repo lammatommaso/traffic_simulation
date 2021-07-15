@@ -239,7 +239,7 @@ void Simulator::create_path()
         setsource.add_car(source.get_index(), _find_next(i).get_index(), i);
         
         _car_vector[i].path = _city.print_path(source, destination); //nel path manca il nodo sorgente!
-        _car_vector[i].path.push_front(source);
+        // _car_vector[i].path.push_front(source);
 
         /*for (auto it=_car_vector[i].path.begin(); it!=_car_vector[i].path.end(); ++it)
              std::cout << ' ' << (*it).get_index();
