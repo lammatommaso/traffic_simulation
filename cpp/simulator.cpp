@@ -160,7 +160,7 @@ void Simulator::_mv_car(int car_index)
         else
         {
             _car_vector[car_index].car->halt();
-            std::cout<<"up"<<"\n";
+            std::cout<<"down"<<"\n";
         }
     }
     // std::cout<<_car_vector[car_index].position.get_index()<<" = "<< _car_vector[car_index].path.back().get_index()<<"\n";
