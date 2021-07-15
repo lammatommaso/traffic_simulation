@@ -155,7 +155,7 @@ void Simulator::_mv_car(int car_index)
             _car_vector[car_index].position = next_node;
             _car_vector[car_index].car->move_forward();
             _car_vector[car_index].car->reset_offset();
-            std::cout<<"up"<<"\n";
+            // std::cout<<"up"<<"\n";
         }
         else
         {
