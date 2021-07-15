@@ -161,9 +161,9 @@ void Simulator::_mv_car(int car_index)
             _car_vector[car_index].car->halt();
         }
     }
+    std::cout<<_car_vector[car_index].position.get_index()<<" = "<< _car_vector[car_index].path.back().get_index()<<"\n";
     if (_car_vector[car_index].position.get_index() ==  _car_vector[car_index].path.back().get_index())
     {
-        std::cout<<_car_vector[car_index].position.get_index()<<" = "<< _car_vector[car_index].path.back().get_index()<<"\n";
         _cars_at_destination++;
         _car_vector[car_index].car->set_at_destination(true);
     }
