@@ -293,10 +293,12 @@ void Simulator::simulation()
             if (!(_car_vector[i].car->get_at_destination()) && _car_vector[i].car->get_delay() == 0)
             {
                 _mv_car(i);
+                std::cout<<"up"<<"\n";
             }
             else
             {
                 _car_vector[i].car->delay();
+                std::cout<<"down"<<"\n";
             }
         }  
         counter++;
