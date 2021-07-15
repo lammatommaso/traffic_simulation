@@ -100,7 +100,7 @@ int main()
    //    oneway_increment_simulation(sim_dir,0.1,100,5,5);
    // }
    for(int i=1; i <=1; i++){
-   car_increment_simulation(i,"/home/tommaso/simulations/car_increment/", 1, 2000, 1, 0, 7,7);
+   car_increment_simulation(i,"/home/tommaso/simulations/car_increment/", 1, 2000, 1, 0.4, 7,7);
    std::cout<<i<<"\n";}
    
 }
