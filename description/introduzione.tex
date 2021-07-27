@@ -15,7 +15,29 @@ lasciamo all'utente la possibilità di scegliere il numero di corsie dei sensi u
 
 La città è rappresentata come un grafo a griglia, e tramite una probabilità impostata dall'utente è possibile controllare la frazione di sensi unici.
 All'inizio della simulazione la matrice di adiacenza è creata e tale probabilità è la probabilità che in fase di creazione un senso alternato diventi senso unico.
+In Fig. \ref{fig:1} è rappresentata una città con pochi sensi unici, per mostrare la struttura a griglia.
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=9cm, height=9cm]{city.png}
+    \caption{Città a griglia con circa l'1\% di sensi unici.}
+    \label{fig:1}
+\end{figure}
+
+Può avvenire che l'elevata frazione di sensi unici generi nodi inattraversabili, in Fig. \ref{fig:2} vediamo una strada con molti sensi unici dalla
+quale sono stati rimossi i nodi inattraversabili.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=9cm, height=9cm]{city30.png}
+    \caption{Città a griglia con soltanto sensi unici.}
+    \label{fig:2}
+\end{figure}
+
+Notando che in quasi tutte le città con solo sensi unici appariva una struttura simile a quella in Fig. \ref{fig:1}, sulla quale era possibile avere 
+percorsi non banali, si è deciso di mettere controlli per evitare di generare nodi inattraversabili, tale controllo può essere sicuramente aggiunto
+negli sviluppi futuri del programma.\\
+\hfill \\
 Le strade sono modellizzate come dei contenitori di automobili che sanno soltanto il numero di automobili che contengono, però dato che ogni automobile conosce il suo offset sulla strada
 questo modello è analogo ad una strada visibile come un array in ogni casella del quale è possibile mettere al più un numero di macchine pari al numero di corsie della strada.
 
@@ -54,5 +76,5 @@ dove $p$ è il numero di volte in cui l'automobile si è mossa alla casella succ
 fermarsi a causa del traffico.
 
 L'indice di traffico $t$ rappresenta nel nostro modello il rapporto tra i tempi reali di percorrenza e quelli ideali, perciò ci aspettiamo che 
-essso sia sempre maggiore o uguale a $1$.
+essso sia sempre maggiore o uguale a $1$ e tenda a $1$ diminuendo il numero di auto, come visibile in Fig. \ref{fig:3}.
 \end{document}
