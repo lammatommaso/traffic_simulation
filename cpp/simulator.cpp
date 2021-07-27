@@ -120,6 +120,7 @@ void Simulator::_mv_car(int car_index)
         {
             if(_car_vector[car_index].position.get_index() == _car_vector[i].position.get_index() &&  _find_next(car_index).get_index() == _find_next(i).get_index())
             {
+                std::cout<<_car_vector[car_index].car->get_offset() <<"="<< _car_vector[i].car->get_offset() - 1<<"\n";
                 if(_car_vector[car_index].car->get_offset() == _car_vector[i].car->get_offset() - 1)
                 {
                     car_in_front++;
@@ -173,57 +174,57 @@ void Simulator::_mv_car(int car_index)
 }
 
 
-class car_by_source {
-    public:
-        int source;
-        int next_step;
-        std::list<int> cars;
+// class car_by_source {
+//     public:
+//         int source;
+//         int next_step;
+//         std::list<int> cars;
 
-        car_by_source(){
-            cars = std::list<int>();
-        }
-};
+//         car_by_source(){
+//             cars = std::list<int>();
+//         }
+// };
 
-class set_source {
-    private:
-        std::list<car_by_source> myList; //anziché una lista si può implementare come matrice
-    public:
-        set_source(){
-            myList = std::list<car_by_source>();
-        }
+// class set_source {
+//     private:
+//         std::list<car_by_source> myList; //anziché una lista si può implementare come matrice
+//     public:
+//         set_source(){
+//             myList = std::list<car_by_source>();
+//         }
 
-        std::list<int> get_cars_at_source_next(int source, int next){
-            for (car_by_source car: myList){
-                if (car.source == source && car.next_step == next){
-                    return car.cars;
-                }
-            }
-            std::cout<<"caall"<<"\n";
-            return std::list<int>();
-        }
+//         std::list<int> get_cars_at_source_next(int source, int next){
+//             for (car_by_source car: myList){
+//                 if (car.source == source && car.next_step == next){
+//                     return car.cars;
+//                 }
+//             }
+//             std::cout<<"caall"<<"\n";
+//             return std::list<int>();
+//         }
 
-        void add_car(int source, int next, int car_index){
-            for (car_by_source car: myList){
-                //aggiungiamo la macchina ad un sottoinsieme esistente
-                if (car.source == source && car.next_step == next){
-                    car.cars.push_back(car_index);
-                    return;
-                }
-            }
-
-
-            //aggiungiamo la macchina ad un nuovo sottoinsieme
-            car_by_source newList = car_by_source();
-            newList.source = source;
-            newList.next_step = next;
-            newList.cars.push_back(car_index);
-            myList.push_back(newList);
-        }
-
-};
+//         void add_car(int source, int next, int car_index){
+//             for (car_by_source car: myList){
+//                 //aggiungiamo la macchina ad un sottoinsieme esistente
+//                 if (car.source == source && car.next_step == next){
+//                     car.cars.push_back(car_index);
+//                     return;
+//                 }
+//             }
 
 
-set_source setsource = set_source();
+//             //aggiungiamo la macchina ad un nuovo sottoinsieme
+//             car_by_source newList = car_by_source();
+//             newList.source = source;
+//             newList.next_step = next;
+//             newList.cars.push_back(car_index);
+//             myList.push_back(newList);
+//         }
+
+// };
+
+
+// set_source setsource = set_source();
 
 void Simulator::create_path()
 {
@@ -240,7 +241,7 @@ void Simulator::create_path()
         //std::cout << source.get_index() << ' ' << destination.get_index() << std::endl;
         _car_vector[i].position = source;
         
-        setsource.add_car(source.get_index(), _find_next(i).get_index(), i);
+        // setsource.add_car(source.get_index(), _find_next(i).get_index(), i);
         
         _car_vector[i].path = _city.print_path(source, destination); //nel path manca il nodo sorgente!
         // _car_vector[i].path.push_front(source);
@@ -269,22 +270,22 @@ void Simulator::create_path()
 // */
 
 
-void Simulator::init_simulation(){
-    for (int car_index = 0; car_index<_car_vector.size(); car_index++ ){
-        auto car = _car_vector[car_index]; //.position.get_index()
-        int source = car.position.get_index();
-        int next = _find_next(car_index).get_index();
-        std::list<int> _car_list = setsource.get_cars_at_source_next(source, next);
+// void Simulator::init_simulation(){
+//     for (int car_index = 0; car_index<_car_vector.size(); car_index++ ){
+//         auto car = _car_vector[car_index]; //.position.get_index()
+//         int source = car.position.get_index();
+//         int next = _find_next(car_index).get_index();
+//         std::list<int> _car_list = setsource.get_cars_at_source_next(source, next);
         
-        int delay = 0;
-        for (int c : _car_list){
+//         int delay = 0;
+//         for (int c : _car_list){
             
-            _car_vector[c].car->set_delay(delay++);
-            std::cout<<"ciao"<<"\n";
+//             _car_vector[c].car->set_delay(delay++);
+//             std::cout<<"ciao"<<"\n";
             
-        }
-    }
-}
+//         }
+//     }
+// }
 
 void Simulator::init_simulation_two(){
     std::vector<int>** car_list_matrix = new std::vector<int>*[_city.get_n_rows()*_city.get_n_coloumns()];
