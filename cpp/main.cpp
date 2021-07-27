@@ -5,7 +5,7 @@
 #include<chrono>
 #include"simulator.h"
 
-void oneway_increment_simulation(std::string sim_dir,float increment, short car_number, short n_rows, short n_coloumns)
+void oneway_increment_simulation(int sim_number,std::string sim_dir,float increment, short car_number, short n_rows, short n_coloumns)
 {
    std::vector<float> x;
    std::vector<float> mean_steps;
@@ -33,7 +33,7 @@ void oneway_increment_simulation(std::string sim_dir,float increment, short car_
    auto stop = std::chrono::steady_clock::now();
    std::chrono::duration<float> execution_time = stop-start;   
    std::ofstream simdata;
-   simdata.open(sim_dir+"sim"+std::to_string(car_number)+".py");
+   simdata.open(sim_dir+"simulation"+std::to_string(sim_number)+".py");
    simdata<<Numpy_Parser::numpy();
    simdata<<Numpy_Parser::print_array("x", x)
            <<Numpy_Parser::print_array("mean_steps", mean_steps)
@@ -97,5 +97,5 @@ int main()
    Road::set_statistics(20,10,10,30);
    City::set_oneway_width(width);
       std::string sim_dir = "/home/tommaso/simulations/oneway_increment/width"+std::to_string(width)+"/";
-      oneway_increment_simulation(sim_dir,0.01,1000,5,5);
+      oneway_increment_simulation(1, sim_dir,0.001,1000,5,5);
 }
