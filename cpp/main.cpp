@@ -22,6 +22,8 @@ void oneway_increment_simulation(std::string sim_dir,float increment, short car_
       simulator.create_path();
       simulator.simulation();
 
+      std::cout<<"running : "<<i<<"\n";
+
       x.push_back(simulator.get_city().get_oneway_fraction());
       mean_steps.push_back(simulator.get_result().steps_mean);
       sigma_steps.push_back(simulator.get_result().steps_sigma);
@@ -95,5 +97,5 @@ int main()
    Road::set_statistics(20,10,10,30);
    City::set_oneway_width(width);
       std::string sim_dir = "/home/tommaso/traffic_simulation/"+std::to_string(width)+"/";
-      oneway_increment_simulation(sim_dir,0.001,1000,5,5);
+      oneway_increment_simulation(sim_dir,0.01,1000,5,5);
 }
