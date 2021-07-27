@@ -1,4 +1,16 @@
 \documentclass[main.tex]{subfiles}
 \begin{document}
-    
+    Nella simulazione che incrementa i sensi unici a tre corsie ci aspettavamo un minimo dell'indice di traffico per una frazione di sensi unici diversa da 0.0.
+    Ciò non è emerso dalle simulazioni e abbiamo concluso che ci sono tre possibilità(esclusi eventuali bug codice):
+    \begin{itemize}
+        \item Effettivamente non è vantaggioso sostituire a sensi alternati sensi unici, anche se a tre corsie.
+        \item I parametri della simulazione sono troppi e stiamo simulando fuori dal range in cui questo effetto è visibile.
+        \item \`{E} molto più rilevante il modo di disporre i sensi unici che la loro frazione.
+    \end{itemize}
+
+    La terza di queste possibilità è giustificata dal fatto che, come si nota in Fig. \ref{fig:8}, la dispersione dell'indice di traffico cresce all'aumentare dei
+    sensi unici. Quindi data un'elevata frazione di sensi unici il modo di disporli potrebbe essere così influente da coprire gli effetti della nostra simulazione,
+    dato che nella nostra simulazione non è possibile controllare la disposizione di tali sensi unici.
+    Se il problema è questo, una soluzione futura potrebbe essere utilizzare la \ii{topological data analysis}, in paricolare i codici a barre, 
+    per confrontare i dati di traffico in basi alla topologia degli insiemi di livello della funzione traffic index definita sulle edge del grafo diretto.
 \end{document}

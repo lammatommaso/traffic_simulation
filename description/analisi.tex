@@ -59,6 +59,9 @@
             \label{fig:5}
         \end{figure}
 
+        Da questo grafico possiamo notare che il traffico aumenterà sempre aumentando i sensi unici a meno della fluttuazione dovuta
+        al posizionamento dei sensi unici nella città.
+
         In Fig. \ref{fig:6} e in Fig. \ref{fig:7} è mostrata la stessa simulazione con sensi unici rispettivamente a due e tre corsie.
 
         \begin{figure}[H]
@@ -68,12 +71,51 @@
             \label{fig:6}
         \end{figure}
 
+        In Fig. \ref{fig:6} a differenza del grafico precedente, notiamo che per un'alta frazione di sensi unici si hanno comunque città
+        con un indice di traffico relativamente basso.
+        Tale effetto è maggiormente accentuato in Fig. \ref{fig:7}, mettendo sensi unici a tre corsie.
+
         \begin{figure}[H]
             \centering
             \includegraphics[width=10cm, height=10cm]{oneway_increment_3.png}  
             \caption{Oneway Increment Simulation su una città $5 \times 5$, con larghezza uguale a tre.}
             \label{fig:7}
         \end{figure}
+
+        In questi tre grafici l'effetto di "quantizzazione" della frazione di sensi unici è dovuto alle piccole dimensioni della città.\\
+        \newpage
+
+        Un'altra analisi che è stata fatta, approssimando linearmente gli esiti delle car increment simulation a diverse frazioni di sensi unici, consiste nel vedere
+        come la pendenza di tali rette varia al variare dei sensi unici, il grafico è riportato in Fig. \ref{fig:8} mentre in Fig. \ref{fig:9} è riportata 
+        una giustificazione grafica dell'approssimazione lineare.
+
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=9cm, height=9cm]{car_increment.png}
+            \caption{Car Increment Simulation su una città $10 \times 10$.}
+            \label{fig:9}
+        \end{figure}
+
+        Si è scelto un range lontano da car\_number = 1 in cui l'indice di traffico non può seguire un andamento lineare per rispettare il limite ideale.
+        Sulla stessa città $10 \times 10$ si sono eseguite varie car increment simulations variando i sensi unici, l'esito è riportato nella figura seguente\footnote{Si è scelto un fit polinomiale per semplicità.}.
+
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=9cm, height=9cm]{oneway_fraction_dependence.png}
+            \caption{Variazione della pendenza della retta in funzione della frazione di sensi unici.}
+            \label{fig:8}
+        \end{figure}
+
+        Un'ultima analisi è quella relativa ai tempi di esecuzione della oneway increment simulation su una città $10 \times 10$, il cui esito segue in Fig. \ref{fig:10}.
+
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=9cm, height=9cm]{execution_time.png}
+            \caption{Tempo di esecuzione di oneway increment simulation al variare del numero di auto generate.}
+            \label{fig:10}
+        \end{figure}
+
+
 
     
 \end{document}
