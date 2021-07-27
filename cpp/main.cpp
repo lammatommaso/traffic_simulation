@@ -95,7 +95,10 @@ int main()
 {
    int width = 2;
    Road::set_statistics(20,10,10,30);
-   City::set_oneway_width(width);
+   for(int i=1 ;i <= 2; i++)
+   {
+      City::set_oneway_width(width);
       std::string sim_dir = "/home/tommaso/simulations/oneway_increment/width"+std::to_string(width)+"/";
       oneway_increment_simulation(1, sim_dir,0.001,1000,5,5);
+   }
 }
