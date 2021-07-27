@@ -58,6 +58,88 @@ std::list<Node> City::print_path(Node source, Node destination)
 
 City::City() {}
 
+
+City::City(short righe, short colonne, float oneway_fraction):_n_rows(righe), _n_coloumns(colonne)
+{ 
+
+    // Road::set_statistics(0,0,0,0);
+    _adj_matrix = new Road*[_n_rows*_n_coloumns];
+    _path = new Node*[_n_rows*_n_coloumns];
+    _distance = new short*[_n_rows*_n_coloumns];
+    _node_set = new Node[_n_rows*_n_coloumns];
+    for( int i = 0; i < _n_rows*_n_coloumns; i++)
+    {
+        _adj_matrix[i] = new Road[_n_rows*_n_coloumns];
+        _path[i] = new Node[_n_rows*_n_coloumns];
+        _distance[i] = new short[_n_rows*_n_coloumns];
+    }
+
+    srand(time(NULL));
+    float local_roads = 0;
+    float local_oneway_roads = 0;
+    
+    for (int i = 0; i < _n_rows*_n_coloumns; i++ )
+    {
+        _adj_matrix[i][i] = Road(-1);
+        for (int j = i+1; j < _n_rows*_n_coloumns; j++)
+        {              
+            float r = rand();
+            float rl = rand();
+            if ((j == i+1 && j%_n_coloumns != 0) || j == i+_n_coloumns )
+            {
+                
+                if(rl/RAND_MAX <= 0.5) 
+                //1. scegli a caso una strada, (i,j) oppure (j,i) - perché almeno una strada tra i due nodi deve esserci sempre
+                {
+                    _adj_matrix[i][j] = Road(0);
+                    if (r/RAND_MAX > oneway_fraction) //2. se hai scelto (i,j), lancia una moneta e decidi se fare anche (j,i)
+                    {
+                        _adj_matrix[j][i] = Road(0);
+                        
+                        local_roads++;
+                    } 
+                    else //3. se non fai anche (j,i), allora aumenta le corsie di (i,j)
+                    { 
+                        _adj_matrix[j][i] = Road(-1);
+                        _adj_matrix[i][j].set_width(City::_oneway_width);
+                        local_oneway_roads++;
+                    }
+                }
+                else{
+                
+                    _adj_matrix[j][i] = Road(0);
+                    if (r/RAND_MAX > oneway_fraction) 
+                    //4. se hai scelto (j,i) tira una moneta
+                    {
+                        _adj_matrix[i][j] = Road(0); //5. costruisci anche (i,j)
+                        local_roads++;
+                    } 
+                    else 
+                    {
+                        _adj_matrix[i][j] = Road(-1); //6. non costruire (i,j) ma aumenta le corsie di (j,i)
+                        _adj_matrix[j][i].set_width(City::_oneway_width);
+                        local_oneway_roads++;
+                    }
+                }
+            } 
+            else 
+            {
+                _adj_matrix[i][j] = Road(-1);
+                _adj_matrix[i][j].set_width(City::_oneway_width);
+                _adj_matrix[j][i] = Road(-1);
+                _adj_matrix[j][i].set_width(City::_oneway_width);
+            }
+        }
+    }
+    _oneway_fraction = local_oneway_roads/(local_oneway_roads+local_roads);
+    for(int i=0;i<_n_rows*_n_coloumns;i++)
+    {
+        _node_set[i].set_index(i); 
+    }
+    _floyd_warshall();
+}
+
+/*
 City::City(short righe, short colonne, float oneway_fraction):_n_rows(righe), _n_coloumns(colonne)
 { 
 
@@ -133,6 +215,8 @@ City::City(short righe, short colonne, float oneway_fraction):_n_rows(righe), _n
     }
     _floyd_warshall();
 }
+
+*/
 Road City::get_road(short i, short j)const
 {
     return _adj_matrix[i][j];
