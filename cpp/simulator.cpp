@@ -143,7 +143,7 @@ void Simulator::_mv_car(int car_index)
         {
             if( _find_next(car_index).get_index() == _car_vector[i].position.get_index() &&  _find_second_next(car_index).get_index() == _find_next(i).get_index())
             {
-                if(_car_vector[i].car->get_offset() == 0) ///----------> era 0, ma con 1 funziona, non ha senso
+                if(_car_vector[i].car->get_offset() == 1) ///----------> era 0, ma con 1 funziona, non ha senso
                 {
                     car_in_front++;
                     std::cout<<car_in_front<<"\n";
