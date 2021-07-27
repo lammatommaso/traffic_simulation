@@ -120,10 +120,11 @@ void Simulator::_mv_car(int car_index)
         {
             if(_car_vector[car_index].position.get_index() == _car_vector[i].position.get_index() &&  _find_next(car_index).get_index() == _find_next(i).get_index())
             {
-                std::cout<<_car_vector[car_index].car->get_offset() <<"="<< _car_vector[i].car->get_offset() - 1<<"\n";
+                // std::cout<<_car_vector[car_index].car->get_offset() <<"="<< _car_vector[i].car->get_offset() - 1<<"\n";
                 if(_car_vector[car_index].car->get_offset() == _car_vector[i].car->get_offset() - 1)
                 {
                     car_in_front++;
+                    std::cout<<"Ne ho uno davanti"<<"\n";
                 }
                 if(car_in_front == width) break;
             }
@@ -147,7 +148,7 @@ void Simulator::_mv_car(int car_index)
                 if(_car_vector[i].car->get_offset() == 1) ///----------> era 0, ma con 1 funziona, non ha senso
                 {
                     car_in_front++;
-                    std::cout<<car_in_front<<"\n";
+                    // std::cout<<car_in_front<<"\n";
                 }
                 if(car_in_front == _find_road(i).get_width()) break;
             }
@@ -325,7 +326,7 @@ void Simulator::simulation()
             // if(_car_vector[i].car->get_delay() != 0) std::cout<<_car_vector[i].car->get_delay()<<"\n";
             if (!(_car_vector[i].car->get_at_destination()))
             {
-                if( _car_vector[i].car->get_delay() == 0)
+                if( _car_vector[i].car->get_delay() <= 0)
                 {
                     _mv_car(i);
                 }

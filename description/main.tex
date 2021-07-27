@@ -5,6 +5,24 @@
 \usepackage{subfiles}
 \usepackage{enumerate}
 \usepackage{color}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{wrapfig}
+\usepackage{tikz}
+\usepackage[colorlinks=true,linkcolor=black,urlcolor=black, citecolor=black]{hyperref}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{subfiles}
+\usepackage{comment}
+\usepackage{float}
+\usepackage{enumerate}
+\usepackage{appendix}
+\usepackage[style=numeric, backend=biber, sorting=nty]{biblatex}
+\usepackage{chngcntr}
+\usepackage{fancyhdr}
 
 \newcommand{\bb}[1]{\textbf{#1}}
 \newcommand{\ii}[1]{\textit{#1}}
@@ -29,7 +47,11 @@
 
     \subfile{struttura}
 
+    \newpage
+
 \section{Risultato simulazioni e analisi dati}
+
+    \subfile{analisi}
 
 \section{Aspetti Informatici}
 
@@ -45,23 +67,23 @@
     \subfile{conclusioni}
 
 
-% \begin{thebibliography}{9}
-% \bibitem{electronapps}
-% https://www.electronjs.org/apps
+\begin{thebibliography}{9}
+\bibitem{electronapps}
+https://www.electronjs.org/apps
 
-% \bibitem{electrondocs}
-% https://www.electronjs.org/docs/tutorial/introduction
+\bibitem{electrondocs}
+https://www.electronjs.org/docs/tutorial/introduction
 
-% \bibtiem{materialize}
-% https://materializecss.com/
+\bibtiem{materialize}
+https://materializecss.com/
 
-% \bibitem{sigmajs}
-% http://sigmajs.org/
+\bibitem{sigmajs}
+http://sigmajs.org/
 
-% \bibitem{gexf}
-% https://gephi.org/gexf/format/
+\bibitem{gexf}
+https://gephi.org/gexf/format/
 
-% \end{thebibliography}
+\end{thebibliography}
 
 
 \end{document}

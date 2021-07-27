@@ -55,37 +55,4 @@ fermarsi a causa del traffico.
 
 L'indice di traffico $t$ rappresenta nel nostro modello il rapporto tra i tempi reali di percorrenza e quelli ideali, perciò ci aspettiamo che 
 essso sia sempre maggiore o uguale a $1$.
-
-{\color{red} \underline{Qui raga dobbiamo capire cosa scrivere}
-
-L'applicazione permette di fare due tipi di simulazione, una grafica e una "batch" (non grafica); in quella batch si può scegliere tra due simulazioni, "car increment" e bla bla bla
-
-% \subsubsection{One way increment}
-
-% \subsubsection{Car increment}
-
-% \subsubsection{Modalità grafica}
-% La modalità grafica permette di costruire una simulazione scegliendo tra diversi parametri; questi sono:
-% \begin{itemize}
-%     \item \bb{Dimensione} del grafo (numero righe, numero colonne)
-%     \item \bb{Lunghezza} delle strade (minima e massima)
-%     \item \bb{Percentuale di sensi unici}, tra 0 (nessun senso unico) e 1 (solo sensi unici)
-%     \item \bb{Numero di corsie} per strada
-%     \item \bb{$\sigma$, media} gaussiana %TODO
-% \end{itemize}
-
-Dopo aver scelto questi parametri, l'utente vedrà un grafo dove potrà selezionare quali sono i nodi di partenza e di arrivo, dove si genereranno e cercheranno di arrivare le macchine. Sono disponibili alcuni preset, ma l'utente può selezionare i nodi a piacere. 
-
-Infine, quando si avvierà effettivamente la simulazione, l'utente vedrà colorarsi gli archi - le strade - a seconda della loro occupazione:
-\begin{itemize}
-    \item \bb{Strada blu}: la strada è vuota o contiene una macchina
-    \item \bb{Strada verde}: la strada è occupata al massimo al 50\% della capacità
-    \item \bb{Strada arancione}: l'occupazione della strada è tra il 50\% e il 75\% della capacità 
-    \item \bb{Strada rossa}: la strada è occupata per più del 75\%.
-\end{itemize}
-
-La scelta di non rappresentare direttamente le strade vuote è stata determinata dal meccanismo con cui le strade sono colorate: infatti, il server restituisce al "client", la parte di applicazione responsabile della visualizzazione grafica, le strade che hanno almeno una macchina; il client controlla poi il rapporto tra l'occupazione della strada e la dimensione della stessa, e a seconda del valore colora gli archi-strade. Questo permette al client di ricevere solo le strade che hanno \textit{almeno} una macchina, e non \bb{tutte} le strade; infatti, la cardinalità delle strade che sono occupate è decisamente inferiore alla cardinalità dell'insieme di tutti archi del grafo, e questo permette un aumento delle prestazioni - in quanto bisogna controllare meno archi - al costo di una perdita minima di precisione, in quanto le strade blu possono essere vuote o contenere una sola macchina. 
-
-Le strade blu quindi rappresentano sostanzialmente quelle strade che sono state occupate dalle macchine, per permette all'utente di visualizzare i percorsi compiuti da queste. }
-
 \end{document}
