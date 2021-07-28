@@ -1,73 +1,73 @@
 \documentclass[main.tex]{subfiles}
 \begin{document}
-    \subsection{Classi}
-        \paragraph{car.cpp}
-            La classe \bb{Car} ha come attributi privati:
-            \begin{itemize}
-                \item \bb{short int \_steps}, ovvero il numero di volte in cui l'automobile si è spostata effettivamente nel reticolo.
-                \item \bb{short int \_stops}, ovvero il numero di volte in cui l'automobile ha dovuto fermasi a causa del traffico.
-                \item \bb{short int \_offset}, ovvero la posizione all'interno della strada.
-                \item \bb{bool \_at\_destination}, che diventa vera quando l'auto giunge a destinazione.
-                \item \bb{short int \_delay}, ovvero un ritardo nella partenza, poiché dato che tutte le auto
-                    sono generate con offset nullo, per evitare sovrapposizioni devono partire una alla volta.
-            \end{itemize}
-        \paragraph{road.cpp}
-            La classe \bb{Road} ha come attributi privati:
-            \begin{itemize}
-                \item \bb{short int \_car\_number}, ovvero il numero di auto presenti nella strada.
-                \item \bb{short int \_road\_length}, ovvero la lunghezza della strada.
-                \item \bb{short int \_width}, ovvero il numero di corsie della strada, uguale a 1 nelle strade che fanno parte di un doppio senso,
-                    e variabile per i sensi unici.
-                \item \bb{static *}, dove * si riferisce ai parametri statistici delle strade spiegati nella sezione precedente, messi come
-                    \ii{static} per migliorare l'uso della memoria.
-            \end{itemize}
-        \paragraph{node.cpp}
-            La classe \bb{Node} ha come unico attributo privato:
-            \begin{itemize}
-                \item \bb{short int \_index}, ovvero l'etichetta del nodo.
-            \end{itemize}
-        \paragraph{city.cpp}
-            La classe \bb{City} ha come attributi privati:
-            \begin{itemize}
-                \item \bb{Node** \_path} e \bb{short int** \_distance}, che servono a determinare il percorso più efficiente tra due nodi.
-                \item \bb{void \_floyd\_warshall}, che dalla matrice di adiacenza determina i due attributi precedenti.
-                \item \bb{Node* \_node\_set}, ovvero l'insieme dei nodi della città.
-                \item \bb{Road** \_adj\_matrix}, ovvero la matrice di adiacenza del grafo diretto che rappresenta la città.
-                \item \bb{short int \_n\_rows} e \bb{short int \_n\_coloumns}, che sono ripettivamente il numero di righe e colonne della griglia che è la città.
-                \item \bb{float \_oneway\_fraction}, ovvero un parametro che in generazione determina la probabilità di avere sensi unici,
-                    tale parametro può essere diverso dall'effettiva frazione, soprattutto per città piccole, ma nei grafici riportiamo sempre la 
-                    frazione effettiva invece che questo parametro.
-            \end{itemize}
-        \paragraph{simulator.cpp}
-            La classe \bb{Simulator} ha necessita di due \ii{struct} aggiuntive:
-            \begin{enumerate}
-                \item \bb{Car\_Info}, che ha come attributi il percorso di un'auto, il nodo appena passato, e un puntatore a macchina per gestire i dati di traffico.
-                \item \bb{Result}, che contiene le statistiche rilevanti della simulazione.
-            \end{enumerate}
-            Inoltre ha come attributi privati:
-            \begin{itemize}
-                \item \bb{std::vector$\langle$Car\_Info$\rangle$ \_car\_vector}, tale vettore è usato per associare ad ogni auto un percorso ed un nodo tramite l'indice 
-                    all'interno del std::vector. Tale implementazione è necessaria in quanto a ogni iterazione viene chiamato un \ii{sort} che permette di 
-                    muovere prima le auto con offset maggiore, riducendo il numero di iterazioni necessarie.
-                \item \bb{Result \_result}, ovvero i risulati della simulazione.
-                \item \bb{short int \_cars\_at\_destination}, fa proseguire la simulazione finché non eguaglia il numero di automobili generate.
-                \item \bb{City \_city}, ovvero la città su cui viene effettuata la simulazione.
-                \item \bb{short int \_car\_number}, ovvero il numero di auto generate.
-                \item \bb{void \_mv\_car(int car\_index)}, che gestisce tutti i controlli del traffico e muove le automobili.
-                    Tale metodo prende la posizione della macchina in \_car\_vector, poiché senza di esso non sappiamo nulla della macchina.
-                \item other useful inline functions.
-            \end{itemize}
-        \paragraph{js\_interface.cpp} 
-            La classe \ii{js\_interface.cpp} serve alla grafica, scritta in javascript per interagire con il codice della simulazione in C++.
-        \paragraph{numpy\_parser.cpp}
-        La classe \ii{numpy\_parser.cpp} serve a creare file python con numpy.array leggibili dalla libreria di graficamento \ii{matplotlib}, 
-            a partire da std::vector del C++.
-    
-    \subsection{Considerazioni}
-        La scelta di avere oggetti che essenzialmente sono solo uno o due interi (short) è dovuta ad alcuni problemi nella creazione della matrice di adiacenza.
-        Infatti usare strutture più ingombranti causava errori di segmentazione durante la creazione della città, probabilmente dovuto al fatto che la memoria
-        occupata dalla matrice di adiacenza eccedeva quella riservata al programma.
-        La scelta di avere classi non interagenti che possono interagire solo tramite la classe \ii{Simulator}, è dovuta a problemi di ricorsività
-        emersi durante le prime versioni del programma. 
-    
+\subsection{Classi}
+    \paragraph{car.cpp}
+        La classe \bb{Car} ha come attributi privati:
+        \begin{itemize}
+            \item \bb{short int \_steps}, ovvero il numero di volte in cui l'automobile si è spostata effettivamente nel reticolo.
+            \item \bb{short int \_stops}, ovvero il numero di volte in cui l'automobile ha dovuto fermasi a causa del traffico.
+            \item \bb{short int \_offset}, ovvero la posizione all'interno della strada.
+            \item \bb{bool \_at\_destination}, che diventa vera quando l'auto giunge a destinazione.
+            \item \bb{short int \_delay}, ovvero un ritardo nella partenza, poiché dato che tutte le auto
+                sono generate con offset nullo, per evitare sovrapposizioni devono partire una alla volta.
+        \end{itemize}
+    \paragraph{road.cpp}
+        La classe \bb{Road} ha come attributi privati:
+        \begin{itemize}
+            \item \bb{short int \_car\_number}, ovvero il numero di auto presenti nella strada.
+            \item \bb{short int \_road\_length}, ovvero la lunghezza della strada.
+            \item \bb{short int \_width}, ovvero il numero di corsie della strada, uguale a 1 nelle strade che fanno parte di un doppio senso,
+                e variabile per i sensi unici.
+            \item \bb{static *}, dove * si riferisce ai parametri statistici delle strade spiegati nella sezione precedente, messi come
+                \ii{static} per migliorare l'uso della memoria.
+        \end{itemize}
+    \paragraph{node.cpp}
+        La classe \bb{Node} ha come unico attributo privato:
+        \begin{itemize}
+            \item \bb{short int \_index}, ovvero l'etichetta del nodo.
+        \end{itemize}
+    \paragraph{city.cpp}
+        La classe \bb{City} ha come attributi privati:
+        \begin{itemize}
+            \item \bb{Node** \_path} e \bb{short int** \_distance}, che servono a determinare il percorso più efficiente tra due nodi.
+            \item \bb{void \_floyd\_warshall}, che dalla matrice di adiacenza determina i due attributi precedenti.
+            \item \bb{Node* \_node\_set}, ovvero l'insieme dei nodi della città.
+            \item \bb{Road** \_adj\_matrix}, ovvero la matrice di adiacenza del grafo diretto che rappresenta la città.
+            \item \bb{short int \_n\_rows} e \bb{short int \_n\_coloumns}, che sono ripettivamente il numero di righe e colonne della griglia che è la città.
+            \item \bb{float \_oneway\_fraction}, ovvero un parametro che in generazione determina la probabilità di avere sensi unici,
+                tale parametro può essere diverso dall'effettiva frazione, soprattutto per città piccole, ma nei grafici riportiamo sempre la 
+                frazione effettiva invece che questo parametro.
+        \end{itemize}
+    \paragraph{simulator.cpp}
+        La classe \bb{Simulator} ha necessita di due \ii{struct} aggiuntive:
+        \begin{enumerate}
+            \item \bb{Car\_Info}, che ha come attributi il percorso di un'auto, il nodo appena passato, e un puntatore a macchina per gestire i dati di traffico.
+            \item \bb{Result}, che contiene le statistiche rilevanti della simulazione.
+        \end{enumerate}
+        Inoltre ha come attributi privati:
+        \begin{itemize}
+            \item \bb{std::vector$\langle$Car\_Info$\rangle$ \_car\_vector}, tale vettore è usato per associare ad ogni auto un percorso ed un nodo tramite l'indice 
+                all'interno del std::vector. Tale implementazione è necessaria in quanto a ogni iterazione viene chiamato un \ii{sort} che permette di 
+                muovere prima le auto con offset maggiore, riducendo il numero di iterazioni necessarie.
+            \item \bb{Result \_result}, ovvero i risulati della simulazione.
+            \item \bb{short int \_cars\_at\_destination}, fa proseguire la simulazione finché non eguaglia il numero di automobili generate.
+            \item \bb{City \_city}, ovvero la città su cui viene effettuata la simulazione.
+            \item \bb{short int \_car\_number}, ovvero il numero di auto generate.
+            \item \bb{void \_mv\_car(int car\_index)}, che gestisce tutti i controlli del traffico e muove le automobili.
+                Tale metodo prende la posizione della macchina in \_car\_vector, poiché senza di esso non sappiamo nulla della macchina.
+            \item other useful inline functions.
+        \end{itemize}
+    \paragraph{js\_interface.cpp} 
+        La classe \ii{js\_interface.cpp} serve alla grafica, scritta in javascript per interagire con il codice della simulazione in C++.
+    \paragraph{numpy\_parser.cpp}
+    La classe \ii{numpy\_parser.cpp} serve a creare file python con numpy.array leggibili dalla libreria di graficamento \ii{matplotlib}, 
+        a partire da std::vector del C++.
+
+\subsection{Considerazioni}
+    La scelta di avere oggetti che essenzialmente sono solo uno o due interi (short) è dovuta ad alcuni problemi nella creazione della matrice di adiacenza.
+    Infatti usare strutture più ingombranti causava errori di segmentazione durante la creazione della città, probabilmente dovuto al fatto che la memoria
+    occupata dalla matrice di adiacenza eccedeva quella riservata al programma.
+    La scelta di avere classi non interagenti che possono interagire solo tramite la classe \ii{Simulator}, è dovuta a problemi di ricorsività
+    emersi durante le prime versioni del programma.
+
 \end{document}

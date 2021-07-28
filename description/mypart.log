@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2021.7.9)  28 JUL 2021 12:10
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2021.7.9)  28 JUL 2021 10:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**main.tex
-(./main.tex
+**mypart.tex
+(./mypart.tex
 LaTeX2e <2017-04-15>
 Babel <3.18> and hyphenation patterns for 4 language(s) loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
@@ -1227,26 +1227,26 @@ Package biblatex Warning: 'babel/polyglossia' detected but 'csquotes' missing.
 
 \@quotelevel=\count341
 \@quotereset=\count342
-(./main.aux)
-\openout1 = `main.aux'.
+(./mypart.aux)
+\openout1 = `mypart.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
 \c@lstlisting=\count343
-LaTeX Info: Redefining \it@ocap on input line 37.
-LaTeX Info: Redefining \it@ccap on input line 37.
+LaTeX Info: Redefining \it@ocap on input line 35.
+LaTeX Info: Redefining \it@ccap on input line 35.
 
 
 File italian.ldf warning: 
@@ -1254,7 +1254,7 @@ italian.ldf    With OT1 encoding guillemets are poorly faked
 italian.ldf    Use T1 encoding
 italian.ldf    or specify a font with command \CaporaliFrom
 italian.ldf    See the documentation concerning the babel-italian typesetting 
-italian.ldf    on input line 37.
+italian.ldf    on input line 35.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -1294,7 +1294,7 @@ Package caption Info: End \AtBeginDocument code.
 
 ABD: EveryShipout initializing macros
 \AtBeginShipoutBox=\box45
-Package hyperref Info: Link coloring ON on input line 37.
+Package hyperref Info: Link coloring ON on input line 35.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -1304,237 +1304,188 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count350
 )
-LaTeX Info: Redefining \ref on input line 37.
-LaTeX Info: Redefining \pageref on input line 37.
-LaTeX Info: Redefining \nameref on input line 37.
+LaTeX Info: Redefining \ref on input line 35.
+LaTeX Info: Redefining \pageref on input line 35.
+LaTeX Info: Redefining \nameref on input line 35.
 
-(./main.out) (./main.out)
+(./mypart.out) (./mypart.out)
 \@outlinefile=\write7
-\openout7 = `main.out'.
+\openout7 = `mypart.out'.
 
 Package biblatex Info: Input encoding 'utf8' detected.
 Package biblatex Info: Automatic encoding selection.
 (biblatex)             Assuming data encoding 'utf8'.
-\openout6 = `main.bcf'.
+\openout6 = `mypart.bcf'.
 
 Package biblatex Info: Trying to load bibliographic data...
-Package biblatex Info: ... file 'main.bbl' found.
- (./main.bbl)
-Package biblatex Info: Reference section=0 on input line 37.
-Package biblatex Info: Reference segment=0 on input line 37.
-LaTeX Font Info:    Try loading font information for U+msa on input line 40.
+Package biblatex Info: ... file 'mypart.bbl' not found.
 
+No file mypart.bbl.
+Package biblatex Info: Reference section=0 on input line 35.
+Package biblatex Info: Reference segment=0 on input line 35.
+LaTeX Font Info:    Try loading font information for U+msa on input line 38.
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 40.
+LaTeX Font Info:    Try loading font information for U+msb on input line 38.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) (./main.toc)
+) (./mypart.toc)
 \tf@toc=\write8
-\openout8 = `main.toc'.
+\openout8 = `mypart.toc'.
 
 
 [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./introduzione.tex
-<city.png, id=134, 408.18095pt x 385.48817pt>
-File: city.png Graphic file (type png)
-<use city.png>
-Package pdftex.def Info: city.png  used on input line 22.
-(pdftex.def)             Requested size: 256.08408pt x 256.08171pt.
-<city30.png, id=137, 361.06091pt x 385.48817pt>
-File: city30.png Graphic file (type png)
-<use city30.png>
-Package pdftex.def Info: city30.png  used on input line 32.
-(pdftex.def)             Requested size: 256.09059pt x 256.08171pt.
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 49.
 
-[2 <./city.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 37--43
-
- []
-
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 56.
 (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 56.
- [3 <./city30.png>])
-(./struttura.tex [4] [5]) (./analisi.tex
-<car_increment5x5.png, id=177, 390.83617pt x 414.1071pt>
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 49.
+ [2] [3]
+<car_increment5x5.png, id=73, 390.83617pt x 414.1071pt>
 File: car_increment5x5.png Graphic file (type png)
 <use car_increment5x5.png>
-Package pdftex.def Info: car_increment5x5.png  used on input line 16.
+Package pdftex.def Info: car_increment5x5.png  used on input line 129.
 (pdftex.def)             Requested size: 227.62143pt x 227.6269pt.
 
-Overfull \hbox (2.62143pt too wide) in paragraph at lines 16--17
+Overfull \hbox (2.62143pt too wide) in paragraph at lines 129--130
  [][] 
  []
 
-<car_increment7x7.png, id=178, 385.9218pt x 414.1071pt>
+<car_increment7x7.png, id=75, 385.9218pt x 414.1071pt>
 File: car_increment7x7.png Graphic file (type png)
 <use car_increment7x7.png>
-Package pdftex.def Info: car_increment7x7.png  used on input line 22.
+Package pdftex.def Info: car_increment7x7.png  used on input line 135.
 (pdftex.def)             Requested size: 227.6271pt x 227.6269pt.
 
-Overfull \hbox (2.6271pt too wide) in paragraph at lines 22--23
+Overfull \hbox (2.6271pt too wide) in paragraph at lines 135--136
  [][] 
  []
 
 
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 14--26
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 127--139
 []$[]$ $[]$ 
  []
 
-[6] [7 <./car_increment5x5.png> <./car_increment7x7.png>]
-<oneway_increment_1.png, id=193, 430.29558pt x 414.1071pt>
+[4 <./car_increment5x5.png> <./car_increment7x7.png>]
+<oneway_increment_1.png, id=84, 430.29558pt x 414.1071pt>
 File: oneway_increment_1.png Graphic file (type png)
 <use oneway_increment_1.png>
-Package pdftex.def Info: oneway_increment_1.png  used on input line 56.
+Package pdftex.def Info: oneway_increment_1.png  used on input line 169.
 (pdftex.def)             Requested size: 284.53435pt x 284.53363pt.
- [8 <./oneway_increment_1.png>]
-<oneway_increment_2.png, id=202, 430.29558pt x 414.1071pt>
+ [5 <./oneway_increment_1.png>]
+<oneway_increment_2.png, id=93, 430.29558pt x 414.1071pt>
 File: oneway_increment_2.png Graphic file (type png)
 <use oneway_increment_2.png>
-Package pdftex.def Info: oneway_increment_2.png  used on input line 73.
+Package pdftex.def Info: oneway_increment_2.png  used on input line 184.
 (pdftex.def)             Requested size: 227.62878pt x 227.6269pt.
 
-Overfull \hbox (2.62878pt too wide) in paragraph at lines 73--74
+Overfull \hbox (2.62878pt too wide) in paragraph at lines 184--185
  [][] 
  []
 
-<oneway_increment_3.png, id=203, 430.29558pt x 414.1071pt>
+<oneway_increment_3.png, id=94, 430.29558pt x 414.1071pt>
 File: oneway_increment_3.png Graphic file (type png)
 <use oneway_increment_3.png>
-Package pdftex.def Info: oneway_increment_3.png  used on input line 79.
+Package pdftex.def Info: oneway_increment_3.png  used on input line 190.
 (pdftex.def)             Requested size: 227.62878pt x 227.6269pt.
 
-Overfull \hbox (2.62878pt too wide) in paragraph at lines 79--80
+Overfull \hbox (2.62878pt too wide) in paragraph at lines 190--191
  [][] 
  []
 
 
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 71--83
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 182--194
 []$[]$ $[]$ 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 85--91
+Underfull \hbox (badness 10000) in paragraph at lines 196--202
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 85--91
+Underfull \hbox (badness 10000) in paragraph at lines 196--202
 
  []
 
-[9 <./oneway_increment_2.png> <./oneway_increment_3.png>]
-<car_increment.png, id=215, 385.9218pt x 414.1071pt>
+[6 <./oneway_increment_2.png> <./oneway_increment_3.png>]
+<car_increment.png, id=106, 385.9218pt x 414.1071pt>
 File: car_increment.png Graphic file (type png)
 <use car_increment.png>
-Package pdftex.def Info: car_increment.png  used on input line 106.
+Package pdftex.def Info: car_increment.png  used on input line 217.
 (pdftex.def)             Requested size: 227.6271pt x 227.6269pt.
 
-Overfull \hbox (2.6271pt too wide) in paragraph at lines 106--107
+Overfull \hbox (2.6271pt too wide) in paragraph at lines 217--218
  [][] 
  []
 
-<oneway_fraction_dependence.png, id=216, 400.95396pt x 414.1071pt>
+<oneway_fraction_dependence.png, id=107, 400.95396pt x 414.1071pt>
 File: oneway_fraction_dependence.png Graphic file (type png)
 <use oneway_fraction_dependence.png>
-Package pdftex.def Info: oneway_fraction_dependence.png  used on input line 112
+Package pdftex.def Info: oneway_fraction_dependence.png  used on input line 223
 .
 (pdftex.def)             Requested size: 227.62842pt x 227.6269pt.
 
-Overfull \hbox (2.62842pt too wide) in paragraph at lines 112--113
+Overfull \hbox (2.62842pt too wide) in paragraph at lines 223--224
  [][] 
  []
 
 
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 104--116
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 215--227
 []$[]$ $[]$ 
  []
 
-[10 <./car_increment.png> <./oneway_fraction_dependence.png>]
-<execution_time.png, id=230, 399.79764pt x 414.1071pt>
+[7 <./car_increment.png> <./oneway_fraction_dependence.png>]
+<execution_time.png, id=123, 399.79764pt x 414.1071pt>
 File: execution_time.png Graphic file (type png)
 <use execution_time.png>
-Package pdftex.def Info: execution_time.png  used on input line 129.
+Package pdftex.def Info: execution_time.png  used on input line 240.
 (pdftex.def)             Requested size: 256.08311pt x 256.08028pt.
-)
-(./informatici.tex
-Underfull \hbox (badness 10000) in paragraph at lines 5--18
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 5--18
-
- []
-
-[11 <./execution_time.png>]
-LaTeX Font Info:    Try loading font information for OML+cmr on input line 33.
-
-(/usr/share/texlive/texmf-dist/tex/latex/base/omlcmr.fd
-File: omlcmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 33.
- [12] [13] [14]
-! Extra }, or forgotten \endgroup.
-l.119 ...alizzare i percorsi compiuti da queste. }
-                                                  
-? 
-) (./sviluppi.tex
-Underfull \hbox (badness 10000) in paragraph at lines 13--21
-
- []
+ [8 <./execution_time.png>]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 257.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 257.
+ (./mypart.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 257.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 257.
+Package rerunfilecheck Info: File `mypart.out' has not changed.
+(rerunfilecheck)             Checksum: F1434AD9A9108176BF16983C7ADC7BEE;454.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 13--21
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
- []
-
-[15]) (./conclusioni.tex [16]) [17]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 80.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 80.
- (./main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 80.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 80.
-Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 77C33C3108C7021F7C570EE5B1F8744F;1507.
-Package logreq Info: Writing requests to 'main.run.xml'.
-\openout1 = `main.run.xml'.
+Package logreq Info: Writing requests to 'mypart.run.xml'.
+\openout1 = `mypart.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 27109 strings out of 494912
- 486798 string characters out of 6180267
- 893816 words of memory out of 5000000
- 29843 multiletter control sequences out of 15000+600000
- 12670 words of font info for 49 fonts, out of 8000000 for 9000
+ 26460 strings out of 494912
+ 477925 string characters out of 6180267
+ 879954 words of memory out of 5000000
+ 29325 multiletter control sequences out of 15000+600000
+ 11849 words of font info for 46 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 55i,8n,54p,953b,1848s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 55i,8n,54p,792b,1223s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/tex
-live/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/font
-s/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
-8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/
-share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/share/t
-exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on main.pdf (17 pages, 1565616 bytes).
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti1
+0.pfb>
+Output written on mypart.pdf (8 pages, 1207862 bytes).
 PDF statistics:
- 435 PDF objects out of 1000 (max. 8388607)
- 377 compressed objects within 4 object streams
- 135 named destinations out of 1000 (max. 500000)
- 247 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 176 PDF objects out of 1000 (max. 8388607)
+ 137 compressed objects within 2 object streams
+ 32 named destinations out of 1000 (max. 500000)
+ 109 words of extra memory for PDF output out of 10000 (max. 10000000)
 

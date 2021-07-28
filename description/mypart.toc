@@ -1,0 +1,31 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\babel@toc {italian}{}
+\babel@toc {italian}{}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1}Struttura del Codice in C++}{2}{section.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.1}Classi}{2}{subsection.1.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{car.cpp}{2}{section*.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{road.cpp}{2}{section*.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{node.cpp}{2}{section*.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{city.cpp}{2}{section*.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{simulator.cpp}{3}{section*.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{js\_interface.cpp}{3}{section*.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{numpy\_parser.cpp}{3}{section*.8}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.2}Considerazioni}{3}{subsection.1.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2}Risultato delle Simulazioni}{4}{section.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.1}Car Increment Simulation}{4}{subsection.2.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.2}Oneway Increment Simulation}{5}{subsection.2.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.3}Considerazioni}{8}{subsection.2.3}

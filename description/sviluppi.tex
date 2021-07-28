@@ -54,4 +54,24 @@ Possiamo rappresentare punti, spezzate, geometrie e collezioni che le contengono
 Si rivela quindi un buon formato per rappresentare il grafo di una città tramite archi e nodi.
 Inoltre grazie alla sua flessibilità è possibile trovare online città reali, costruite in questo formato.
 geojson, formato strano usato da libreria javascript 
+
+\subsection{Topological Data Analysis}
+Una recente branca della matematica, chiamata \ii{topological data analysis}, permette di confrontare dati di traffico da un punto di vista topologico.
+\`{E} infatti possibile a partire dalla funzione numero di macchine medio, definita sulle strade(ovvero il grafo), costruire un diagramma di persistenza o codice a 
+barre che rappresenta fedelmente il dato. La distanza tra due codici a barre, più semplice da calcolare della distanza nello spazio delle funzioni definite sul grafo,
+permette di stimare la distanza effettiva tra i dati di traffico. Tali diagrammi di persistenza o codici a barre sono costruiti vedendo come variano le dimensioni dei gruppi di omologia
+degli insiemi di livello della funzione numero di auto. Nel caso di un grafo gli unici gruppi di omologia non banali sono il gruppo delle componenti connesse e quello dei cicli indipendenti.
+In futuro si potrebbe pensare di implementare un codice che produca questi diagrammi di persistenza e vedere come i sensi unci interagiscono con la topologia dei dati di traffico.
+Per un esempio di applicazione della TDA al traffico si veda \cite{barcodes}.
+
+\subsection{Semafori e Rotonde}
+Al momento agli incroci il traffico generato è dovuto soltanto alla congestione e non a rotonde o semafori.
+In futuro si potrebbero aggiungere dei semafori o delle rotonde, per rendere le città più realistiche, ma tale aggiunta
+sicuramente andrebbe a coprire ulteriormente gli effetti dei sensi unici.
+Una cosa interessante potrebbe essere in alternativa costruire una città con soli semafori, e al variare dei sensi unici,
+tramite un algoritmo di geometric deep learning imparare la funzione che a ogni nodo associa un duty cycle(o due per le due direzioni) in modo 
+da ridurre l'indice di traffico. In seguito si potrebbero confrontare le diverse funzioni di duty cycle al variare del numero di sensi unici in modo statistico
+o ricorrendo alla TDA.
+La formalizzazione del geometric deep learning è molto recente ( Maggio 2021), per avere un' idea di come funziona vedere \cite{2021geo}.
+
 \end{document}

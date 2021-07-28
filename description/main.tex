@@ -22,14 +22,16 @@
 \usepackage{enumerate}
 \usepackage{appendix}
 \usepackage[style=numeric, backend=biber, sorting=nty]{biblatex}
+\addbibresource{bibliography.bib}
 \usepackage{chngcntr}
 \usepackage{fancyhdr}
+
 
 \newcommand{\bb}[1]{\textbf{#1}}
 \newcommand{\ii}[1]{\textit{#1}}
 
 \title{Simulazione di Traffico su un Grafo Diretto}
-\author{ Fabbri Simone, Lamma Tommaso, Pasquini Micheal, Gianluca }
+\author{ Fabbri Simone, Lamma Tommaso, Pasquini Micheal, Spiller Gianluca }
 \date{May 2021}
 
 \begin{document}
@@ -52,7 +54,7 @@
 
     % \newpage
 
-\section{Risultato delle Simulazioni e Analisi Dati}
+\section{Risultato delle Simulazioni}
 
     \subfile{analisi}
 
@@ -73,23 +75,6 @@
 
     \subfile{conclusioni}
 
-\begin{thebibliography}{9}
-\bibitem{electronapps}
-https://www.electronjs.org/apps
-
-\bibitem{electrondocs}
-https://www.electronjs.org/docs/tutorial/introduction
-
-\bibtiem{materialize}
-https://materializecss.com/
-
-\bibitem{sigmajs}
-http://sigmajs.org/
-
-\bibitem{gexf}
-https://gephi.org/gexf/format/
-
-\end{thebibliography}
-
+    \printbibliography[heading = bibintoc]
 
 \end{document}

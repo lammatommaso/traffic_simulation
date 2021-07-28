@@ -1,0 +1,148 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 2.9 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nty/global//global/global}
+    \entry{electronapps}{misc}{}
+      \field{sortinit}{}
+      \field{sortinithash}{495dc9894017a8b12cafa9c619d10c0c}
+      \field{howpublished}{\url{https://www.electronjs.org/apps}}
+    \endentry
+    \entry{electrondocs}{misc}{}
+      \field{sortinit}{}
+      \field{sortinithash}{495dc9894017a8b12cafa9c619d10c0c}
+      \field{howpublished}{\url{https://www.electronjs.org/docs/tutorial/introduction}}
+    \endentry
+    \entry{materialize}{misc}{}
+      \field{sortinit}{}
+      \field{sortinithash}{495dc9894017a8b12cafa9c619d10c0c}
+      \field{howpublished}{\url{https://materializecss.com/}}
+    \endentry
+    \entry{sigmajs}{misc}{}
+      \field{sortinit}{}
+      \field{sortinithash}{495dc9894017a8b12cafa9c619d10c0c}
+      \field{howpublished}{\url{http://sigmajs.org/}}
+    \endentry
+    \entry{gexf}{misc}{}
+      \field{sortinit}{}
+      \field{sortinithash}{495dc9894017a8b12cafa9c619d10c0c}
+      \field{howpublished}{\url{https://gephi.org/gexf/format/}}
+    \endentry
+    \entry{2021geo}{misc}{}
+      \name{author}{4}{}{%
+        {{hash=a55f31e19939af212d8e498666602095}{%
+           family={Bronstein},
+           familyi={B\bibinitperiod},
+           given={Michael\bibnamedelima M.},
+           giveni={M\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=c83b564e32475f10dcc91be7e66d3e81}{%
+           family={Bruna},
+           familyi={B\bibinitperiod},
+           given={Joan},
+           giveni={J\bibinitperiod}}}%
+        {{hash=f9073aa7e4e4e473ab8161f05ad4b05f}{%
+           family={Cohen},
+           familyi={C\bibinitperiod},
+           given={Taco},
+           giveni={T\bibinitperiod}}}%
+        {{hash=b1208a71c9b067bcef8fb29c15a09b5d}{%
+           family={Veličković},
+           familyi={V\bibinitperiod},
+           given={Petar},
+           giveni={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{f38eb180001bb1568340defd4697457d}
+      \strng{fullhash}{2c578b48a1eb7466609f953907fe93f4}
+      \strng{bibnamehash}{f38eb180001bb1568340defd4697457d}
+      \strng{authorbibnamehash}{f38eb180001bb1568340defd4697457d}
+      \strng{authornamehash}{f38eb180001bb1568340defd4697457d}
+      \strng{authorfullhash}{2c578b48a1eb7466609f953907fe93f4}
+      \field{sortinit}{B}
+      \field{sortinithash}{276475738cc058478c1677046f857703}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprintclass}{cs.LG}
+      \field{eprinttype}{arXiv}
+      \field{title}{Geometric Deep Learning: Grids, Groups, Graphs, Geodesics, and Gauges}
+      \field{year}{2021}
+      \verb{eprint}
+      \verb 2104.13478
+      \endverb
+    \endentry
+    \entry{barcodes}{inproceedings}{}
+      \name{author}{7}{}{%
+        {{hash=497a9e1774032d32e4123020bfd16b7a}{%
+           family={Wu},
+           familyi={W\bibinitperiod},
+           given={Yu},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=99f75224684d4381acd7d642eb1d0429}{%
+           family={Shindnes},
+           familyi={S\bibinitperiod},
+           given={Gabriel},
+           giveni={G\bibinitperiod}}}%
+        {{hash=6b28b75a8e3f0084c22809b8a7d926fe}{%
+           family={Karve},
+           familyi={K\bibinitperiod},
+           given={Vaibhav},
+           giveni={V\bibinitperiod}}}%
+        {{hash=32d35d0ff22936db624bab686eb1b22d}{%
+           family={Yager},
+           familyi={Y\bibinitperiod},
+           given={Derrek},
+           giveni={D\bibinitperiod}}}%
+        {{hash=c9d993c69593bad49ac0084b3ef43405}{%
+           family={Work},
+           familyi={W\bibinitperiod},
+           given={Daniel\bibnamedelima B.},
+           giveni={D\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+        {{hash=bdfe092a1b3a9eb7b842362dd9a166c8}{%
+           family={Chakraborty},
+           familyi={C\bibinitperiod},
+           given={Arnab},
+           giveni={A\bibinitperiod}}}%
+        {{hash=2b42a374a422a63dcc72026dcf40faa5}{%
+           family={Sowers},
+           familyi={S\bibinitperiod},
+           given={Richard\bibnamedelima B.},
+           giveni={R\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+      }
+      \strng{namehash}{cd04329abccf48a8aa94b39b926da204}
+      \strng{fullhash}{84bad3475a56bf33f8727e1d3b4478b8}
+      \strng{bibnamehash}{cd04329abccf48a8aa94b39b926da204}
+      \strng{authorbibnamehash}{cd04329abccf48a8aa94b39b926da204}
+      \strng{authornamehash}{cd04329abccf48a8aa94b39b926da204}
+      \strng{authorfullhash}{84bad3475a56bf33f8727e1d3b4478b8}
+      \field{sortinit}{W}
+      \field{sortinithash}{ecb89ff85896a47dc313960773ac311d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2017 IEEE 20th International Conference on Intelligent Transportation Systems (ITSC)}
+      \field{title}{Congestion barcodes: Exploring the topology of urban congestion using persistent homology}
+      \field{year}{2017}
+      \field{pages}{1\bibrangedash 6}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1109/ITSC.2017.8317777
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
