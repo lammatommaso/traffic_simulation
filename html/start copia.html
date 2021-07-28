@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Import materialize.css-->
+  <link type="text/css" rel="stylesheet" href="css/materialize.css" media="screen,projection" />
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+  <script>
+    function getVals() {
+      return "perc: " + document.getElementById("perc").value + "\n"
+        + "numcar: " + document.getElementById("numcar").value + "\n"
+        + "cols: " + document.getElementById("cols").value + "\n"
+        + "rows: " + document.getElementById("rows").value + "\n"
+        + "gauss: " + document.getElementById("gauss").value + "\n"
+        + "sigm: " + document.getElementById("sigm").value + "\n"
+        + "minlen: " + document.getElementById("minlen").value + "\n"
+        + "maxlen: " + document.getElementById("maxlen").value
+        ;
+    }
+  </script>
+</head>
+
+<body class="teal lighten-4">
+  <div class="container">
+    <div class="row">
+      <h1>Simulazione Traffico</h1>
+    </div>
+    <div class="card-panel hoverable" style="padding: 12px;">
+      <div id="scherm">
+        <!--1-->
+        <div class="row">
+          <div class="col s3 ">
+            <p>Percentuale sensi unici</p>
+          </div>
+          <div class="col s9">
+            <form action="#">
+              <p class="range-field">
+                <input type="range" id="perc" min="0" max="1" step="0.01" />
+              </p>
+            </form>
+          </div>
+        </div>
+        <!--2-->
+        <div class="row">
+          <div class="col s3 ">
+            <p>Numero macchine</p>
+          </div>
+          <div class="col s9">
+            <form action="#">
+              <p class="range-field">
+                <input type="range" id="numcar" min="0" max="100" />
+              </p>
+            </form>
+          </div>
+        </div>
+        <!--3-->
+        <div class="row">
+          <div class="col s3 ">
+            <p>Colonne del grafo</p>
+          </div>
+          <div class="col s9">
+            <form action="#">
+              <p class="range-field">
+                <input type="range" id="cols" min="0" max="100" />
+              </p>
+            </form>
+          </div>
+        </div>
+        <!--4-->
+        <div class="row">
+          <div class="col s3 ">
+            <p>Righe del grafo</p>
+          </div>
+          <div class="col s9">
+            <form action="#">
+              <p class="range-field">
+                <input type="range" id="rows" min="0" max="100" />
+              </p>
+            </form>
+          </div>
+        </div>
+        <!--5-->
+        <div class="row">
+          <div class="col s3 ">
+            <p>Gaussian Mean</p>
+          </div>
+          <div class="col s9">
+            <form action="#">
+              <p class="range-field">
+                <input type="range" id="gauss" min="0" max="100" />
+              </p>
+            </form>
+          </div>
+        </div>
+        <!--6-->
+        <div class="row">
+          <div class="col s3 ">
+            <p>Gaussian Sigma</p>
+          </div>
+          <div class="col s9">
+            <form action="#">
+              <p class="range-field">
+                <input type="range" id="sigm" min="0" max="100" />
+              </p>
+            </form>
+          </div>
+        </div>
+        <!--7-->
+        <div class="row">
+          <div class="col s3 ">
+            <p>Lunghezza minima delle strade</p>
+          </div>
+          <div class="col s9">
+            <form action="#">
+              <p class="range-field">
+                <input type="range" id="minlen" min="0" max="100" />
+              </p>
+            </form>
+          </div>
+        </div>
+        <!--8-->
+        <div class="row">
+          <div class="col s3 ">
+            <p>Lunghezza massima delle strade</p>
+          </div>
+          <div class="col s9">
+            <form action="#">
+              <p class="range-field">
+                <input type="range" id="maxlen" min="0" max="100" />
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+      <!--Grafo-->
+      <div id="graph" style="display: none;">
+        <p>Qui ci mettiamo il grafo</p>
+      </div>
+    </div>
+    <div class="col s12 right-align">
+      <button id='submit-btn' class="btn waves-effect waves-light" type="submit" name="action">Conferma
+        <i class="material-icons right">arrow_forward</i>
+      </button>
+      <script>
+        $(document).ready(function () {
+          $('#submit-btn').on('click', function () {
+            $(this).hide();
+            $(scherm).hide();
+            $(graph).show();
+          });
+        });
+      </script>
+    </div>
+    <div class="row"></div>
+  </div>
+
+  <!--JavaScript at end of body for optimized loading-->
+  <script type="text/javascript" src="js/materialize.js"></script>
+</body>
+
+</html>

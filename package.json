@@ -1,0 +1,63 @@
+{
+  "name": "trafficsimulation",
+  "version": "1.0.0",
+  "description": "traffic simulation (https://github.com/lammatommaso/traffic_simulation)",
+  "main": "./main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "pack": "electron-builder --dir",
+    "distall": "electron-builder -m -l -w",
+    "dist": "electron-builder",
+    "distl": "electron-builder -l"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "babylonjs": "^4.2.0",
+    "builder-util": "^22.10.5",
+    "jquery": "^3.6.0",
+    "node-addon-api": "^3.2.1",
+    "node-gyp": "^7.1.2",
+    "sigma": "^1.2.1"
+  },
+  "devDependencies": {
+    "electron": "^10.4.7",
+    "electron-builder": "^22.10.5"
+  },
+  "gypfile": true,
+  "build": {
+    "appId": "uniboh",
+    "mac": {
+      "category": "Productivity"
+    },
+    "files": [
+      "./main.js",
+      "package.json",
+      "node_modules/sigma/**/*",
+      "html/**/*",
+      "javascript/**/*",
+      "build/Release/addon.node"
+    ],
+    "asar": false,
+    "extraFiles": [
+      "build/Release/addon.node"
+    ],
+    "linux": {
+      "icon": "build/256x256.png",
+      "target": [
+        "appimage"
+      ],
+      "category": "Productivity"
+    },
+    "win": {
+      "target": [
+        "portable"
+      ]
+    },
+    "directories": {
+      "buildResources": "build"
+    },
+    "nodeGypRebuild": true
+  }
+}

@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Babylon JS Electron App</title>
+        <style>
+            html,
+            body {
+                /*overflow: hidden;*/
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+                position: absolute;
+            }
+        </style>
+        <link rel="stylesheet" href="css/index.css">
+        
+        <!--Import Google Icon Font-->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!--Import materialize.css-->
+        <link type="text/css" rel="stylesheet" href="css/materialize.css" media="screen,projection" />
+
+        <script>            
+            const { ipcRenderer } = require('electron')
+        </script>
+        
+    </head>
+
+    <body class="grey darken-3">
+        <div class="container">
+            <!--<div class="row">-->
+                <h4 style="color:white;">Car Increment Simulation</h4>
+            <!--</div>-->
+            <div class="row" id="settings">
+                <div class="card-panel hoverable" style="padding: 12px;">
+                    <div>
+                    <!--1-->
+                    <div class="row">
+                        <div class="col s3 ">
+                        <p>Percentuale sensi unici</p>
+                        </div>
+                        <div class="col s9">
+                        <form action="#">
+                            <p class="range-field">
+                            <input type="range" id="p" min="0" max="1" step="0.01" value="0.5" />
+                            </p>
+                        </form>
+                        </div>
+                    </div>
+                    <!--2-->
+                    <div class="row">
+                        <div class="col s3 ">
+                        <p>Numero minimo macchine</p>
+                        </div>
+                        <div class="col s9">
+                        <form action="#">
+                            <p class="range-field">
+                            <input type="range" id="min_car" min="10" max="5000" value="400"/>
+                            </p>
+                        </form>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col s3 ">
+                        <p>Numero massimo macchine</p>
+                        </div>
+                        <div class="col s9">
+                        <form action="#">
+                            <p class="range-field">
+                            <input type="range" id="max_car" min="10" max="5000" value="600"/>
+                            </p>
+                        </form>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col s3 ">
+                        <p>Incremento macchine</p>
+                        </div>
+                        <div class="col s9">
+                        <form action="#">
+                            <p class="range-field">
+                            <input type="range" id="increment" min="10" max="500" value="100"/>
+                            </p>
+                        </form>
+                        </div>
+                    </div>
+
+                    <!--3-->
+                    <div class="row">
+                        <div class="col s3 ">
+                        <p>Colonne del grafo</p>
+                        </div>
+                        <div class="col s9">
+                        <form action="#">
+                            <p class="range-field">
+                            <input type="range" id="cols" min="0" max="30" value="6" />
+                            </p>
+                        </form>
+                        </div>
+                    </div>
+                    <!--4-->
+                    <div class="row">
+                        <div class="col s3 ">
+                        <p>Righe del grafo</p>
+                        </div>
+                        <div class="col s9">
+                        <form action="#">
+                            <p class="range-field">
+                            <input type="range" id="rows" min="0" max="30" value="6" />
+                            </p>
+                        </form>
+                        </div>
+                    </div>
+                    <!--5-->
+                    <div class="row">
+                        <div class="col s3 ">
+                        <p>Gaussian Mean</p>
+                        </div>
+                        <div class="col s9">
+                        <form action="#">
+                            <p class="range-field">
+                            <input type="range" id="mean" min="0" max="100" value="10" />
+                            </p>
+                        </form>
+                        </div>
+                    </div>
+                    <!--6-->
+                    <div class="row">
+                        <div class="col s3 ">
+                        <p>Gaussian Sigma</p>
+                        </div>
+                        <div class="col s9">
+                        <form action="#">
+                            <p class="range-field">
+                            <input type="range" id="sigma" min="0" max="100" value="10" />
+                            </p>
+                        </form>
+                        </div>
+                    </div>
+                    <!--7-->
+                    <div class="row">
+                        <div class="col s3 ">
+                        <p>Lunghezza minima delle strade</p>
+                        </div>
+                        <div class="col s9">
+                        <form action="#">
+                            <p class="range-field">
+                            <input type="range" id="min_l" min="0" max="100" value="12" />
+                            </p>
+                        </form>
+                        </div>
+                    </div>
+                    <!--8-->
+                    <div class="row">
+                        <div class="col s3 ">
+                        <p>Lunghezza massima delle strade</p>
+                        </div>
+                        <div class="col s9">
+                        <form action="#">
+                            <p class="range-field">
+                            <input type="range" id="max_l" min="0" max="100" value="30" />
+                            </p>
+                        </form>
+                        </div>
+                    </div>
+                    <!-- 9 -->
+                    <div class="row">
+                        <div class="col s3 ">
+                            <p>Numero di corsie</p>
+                        </div>
+                        <div class="col s9">
+                            <form action="#">
+                                <p class="range-field">
+                                    <input type="range" id="corsie" min="1" max="10" value="1" />
+                                </p>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col s3 ">
+                        <p>Cartella dove salvare file di output della simulazione (default: <samp>/tmp</samp>)</p>
+                        </div>
+                        <div class="col s9">
+                        
+                            <p class="range-field">
+                                <button id="folders" class="waves-effect waves-light btn-small red lighten-2" onclick='ipcRenderer.send("select_folder")'>Seleziona cartella</button>
+                                <button id="go_to_results" style="visibility: hidden" class="waves-effect waves-light btn-small green" onclick="ipcRenderer.send('open_folder', this.value)">Apri cartella con output</button>
+                            </p>
+                        
+                        </div>
+                    </div>
+                    </div>
+                </div>
+
+                <div class="row">
+
+                    <div class="col s6 left-align">
+                        <a class="btn-floating btn-large waves-effect waves-light red lighten-2" href="./start.html"><i class="material-icons">arrow_back</i></a>
+                    </div>
+
+                    <div class="col s6 right-align">
+                        <a class="btn-floating btn-large waves-effect waves-light green" onclick = "window.scrollTo(0, 0); init()"><i class="material-icons">play_arrow</i></a>
+                    </div>
+                </div>
+
+            </div>
+            
+        </div>
+        
+        <div id="waiting_screen" style="visibility: hidden; background-color: rgba(0,0,0,0.75); text-align:center; width: 100%; height: 100%; position: absolute; z-index: 1; top: 0px; bottom: 0px; left: 0px; right: 0px ">
+            <h2 style="color: white">La simulazione è in corso, ma può richiedere diversi minuti. Si prega di attendere</h2>
+            <div class="progress">
+                <div class="determinate" style="width:0%"></div>
+            </div>
+        </div>
+          
+        <!--JavaScript at end of body for optimized loading-->
+        <script type="text/javascript" src="js/materialize.js"></script>
+      </body>
+
+    <script src="js/utils.js"></script>
+    <!-- <script src="../javascript/main.js"></script> -->
+
+    <script>
+
+        //test simulazione car_increment
+
+        city_number = 0
+        sim_dir = "/tmp/"
+        min_car_number = 500
+        max_car_number = 600
+        increment = 100
+        p = 0.5
+        rows = 10
+        cols = 10
+
+        simulation_type = 1
+
+        gaussian_mean = 20
+        gaussian_sigma = 10
+        min_l = 5
+        max_l = 30
+
+        corsie = 0
+
+        //parametri per altra simulazione
+        car_number = 0
+
+        ipcRenderer.on("folder_selected", (event, folder) => {
+            sim_dir = folder[0];
+            document.getElementById("folders").innerHTML = "Selezionato: /" +  sim_dir.split("/").pop()
+            sim_dir += "/"
+        })
+
+        function disableScroll() {
+            // Get the current page scroll position
+            scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
+        
+                // if any scroll is attempted, set this to the previous value
+                window.onscroll = function() {
+                    window.scrollTo(scrollLeft, scrollTop);
+                };
+        }
+        
+        function enableScroll() {
+            window.onscroll = function() {};
+        }
+
+        function init(){
+            document.getElementById("go_to_results").style.visibility = "hidden"
+            document.getElementById("go_to_results").value = sim_dir
+            disableScroll();
+
+            p              = parseFloat(document.getElementById("p").value)
+
+            min_car_number = parseInt(document.getElementById("min_car").value)
+            max_car_number = parseInt(document.getElementById("max_car").value)
+            increment      = parseInt(document.getElementById("increment").value)
+            cols           = parseInt(document.getElementById("cols").value)
+            rows           = parseInt(document.getElementById("rows").value)
+                    
+            gaussian_mean  = parseInt(document.getElementById("mean").value)
+            gaussian_sigma = parseInt(document.getElementById("sigma").value)
+            min_l          = parseInt(document.getElementById("min_l").value)
+            max_l          = parseInt(document.getElementById("max_l").value)
+            corsie         = parseInt(document.getElementById("corsie").value)
+
+            ipcRenderer.send("batch_init", sim_dir, simulation_type, p, 
+                            cols, rows, min_car_number, max_car_number, increment,
+                            car_number, gaussian_mean, gaussian_sigma, min_l, max_l, corsie)
+
+            document.getElementById("waiting_screen").style.visibility = "visible"
+
+        }
+
+        ipcRenderer.on("sim_update", (event, data) => {
+            if (data["data"] == "ok"){
+                document.getElementById("waiting_screen").style.visibility = "hidden"
+                document.getElementById("go_to_results").style.visibility = "visible"
+                enableScroll();
+            } else {
+                w = parseInt(data["data"])
+                console.log(w)
+                document.getElementsByClassName("progress")[0].setAttribute("style", `width: ${w}%`)
+
+            }
+        })
+
+        /*ipcRenderer.on("simulation_finished", (event) => {
+            document.getElementById("waiting_screen").style.visibility = "hidden"
+            document.getElementById("go_to_results").style.visibility = "visible"
+            enableScroll();
+        })*/
+
+        
+
+        
+    </script>
+
+</html>
