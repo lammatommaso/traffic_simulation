@@ -1,16 +1,13 @@
 \documentclass[main.tex]{subfiles}
 \begin{document}
 \subsection{Analisi città esistenti}
-È possibile, oltre che interessante, effettuare simulazioni sul traffico su città esistenti: 
+È possibile, oltre che interessante, effettuare simulazioni su città esistenti. Questo si può ottenere attraverso un insieme di standard e tecnologie già esistenti; diamo di seguito un esempio di implementazione:
 
-step 1. ottenere una rappresentazione a grafico della città; si può fare con geojson e il progetto openstreetmap, oppure https://www.cityjson.org/datasets/, oppure [cerca su google roba a caso] oppure [progetto che non mi ricordo]
+1. la prima cosa da fare per analizzare città esistenti, è procurarsi il modello di una città già esistente. Questo è molto facile, grazie a svariati progetti che si sono occupati di questo problema, come ad esempio openstreetmap e \cite{cityjson}. Questi progetti permettono inoltre di scaricare le città in un formato standard chiamato GeoJSON, cosa estremamente vantaggiosa in quanto questo può essere facilmente processato e analizzato da diverse librerie gratuite opensource; questo formato è inoltre descritto nell'RFC7946 (\cite{roba}) e viene approfondito più avanti.
 
-step 1.1: conversione geojson -> gexf http://ignacioarnaldo.github.io/OpenStreetMap2Graph/
-sorgenti progetto: https://github.com/ignacioarnaldo/OpenStreetMap2Graph
+2. A questo punto, occorre che la città sia caricata come modello sia per la grafica - e quindi che sia possibile disegnare dal programma la città - sia nella parte logica in C++; siccome in questa parte le città sono rappresentate come matrici di adiacenza, occorre quindi convertite una città descritta da GeoJSON in una matrice di adiacenza. Il primo problema è risolto direttamente dal formato GEXF, un formato supportato da sigmajs (si veda la sezione 4.2.2). Siccome questo formato è supportato direttamente da sigmajs, basta convertire il file GeoJSON per ottenere un modo diretto di disegnare la città: i dati convertiti possono essere rappresentati direttamente come un grafo da sigmajs; per fare la conversione, sono disponibili progetti come \cite{open}.
 
-step 2. creare la matrice di adiacenza compatibile col nostro programma (molto facile farlo da gexf)
-
-step 3. visualizzare il grafico: gexf 
+3. Infine, il problema di convertire GeoJSON in matrice di adiacenza può essere risolto molto più facilmente convertendo la città in formato gexf in matrice di adiacenza, essendo questa rappresentazione molto più vicina appunto ad una matrice di adiacenza rispetto a GeoJSON.
 \\
 \\
 GeoJSON è un formato per la memorizzazione di geometrie spaziali, nel quale abbiamo gli attributi descritti attraverso la JavaScript object notation.
@@ -51,9 +48,6 @@ Possiamo rappresentare punti, spezzate, geometrie e collezioni che le contengono
   ]
 }
 \end{lstlisting}
-Si rivela quindi un buon formato per rappresentare il grafo di una città tramite archi e nodi.
-Inoltre grazie alla sua flessibilità è possibile trovare online città reali, costruite in questo formato.
-geojson, formato strano usato da libreria javascript 
 
 \subsection{Topological Data Analysis}
 Una recente branca della matematica, chiamata \ii{topological data analysis}, permette di confrontare dati di traffico da un punto di vista topologico.

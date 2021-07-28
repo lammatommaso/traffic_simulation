@@ -5,8 +5,8 @@
 Dato in inpout un grafo \(G=(V,E)\) e una funzione \(w:E(G)\to R\) che assegna pesi agli archi del grafo (anche negativi) , e \(V(G)={1,2,3,...,n}\)
 Dall'esecuzione dell'algoritmo, otteniamo in output la matrice quadrata \(n \times n\) contenente i costi dei cammini minimi per ogni coppia di vertici del grafo:
 \(D^{(n)}\) con \(d^{(n)}_{(i,j)}\) pari al costo di un cammino minimo tra \(i\) e  \(j\).
-Abbiamo bisogno poi, per la ricostruzione del cammino, di una matrice di appoggio \(P_{i,j,}\) contenente  il nodo predecessore per la ricostruzione del cammino.
-Utilizza la programmazione dinamica (ossia per ogni passo, il programma prende una decisione).
+Abbiamo bisogno poi, per la ricostruzione del cammino, di usare una matrice di appoggio \(P_{i,j,}\) contenente  il nodo predecessore per la ricostruzione del cammino.
+Questo algoritmo utilizza la programmazione dinamica (ossia per ogni passo, il programma prende una decisione).
 \\
 \\
 \textit{Pseudocodice dell'algoritmo:}
@@ -89,7 +89,7 @@ Per la grafica sono state usate due librerie fondamentali, una per la rappresent
 
 Per semplificare la gestione della grafica nell'interfaccia, abbiamo optato per l'utilizzo di \textbf{materialize} \cite{materialize}, che è un framework CSS basato su Material Design, lo standard grafico messo a punto da Google per lo sviluppo di interfacce user friendly e coerenti. Questo consente di avere oggetti esteticamente appaganti e responsive, con un sistema di impaginazione a righe/colonne automatico, che aiuta nell'allestimento delle varie pagine.
 
-\paragraph{sigma} 
+\paragraph{Sigma} 
 
 Sigma.js è una libreria opensource, che serve per creare grafi \cite{sigmajs}. La versione da noi usata è la v1.2.0, la quale non è l'ultima disponibile, ma la più stabile. Questa libreria permette di visualizzare grafi nel formato GEXF \cite{gexf}, funzionalità che non è stata usata nel progetto, ma che è stata tenuta in considerazione in quanto potenzialmente molto utile in sviluppi futuri. Per ulteriori informazioni si veda la sezione apposita sugli sviluppi futuri  
 \ref{section:sviluppi}.

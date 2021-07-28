@@ -44,6 +44,21 @@
       \field{sortinithash}{495dc9894017a8b12cafa9c619d10c0c}
       \field{howpublished}{\url{https://gephi.org/gexf/format/}}
     \endentry
+    \entry{cityjson}{misc}{}
+      \field{sortinit}{}
+      \field{sortinithash}{495dc9894017a8b12cafa9c619d10c0c}
+      \field{howpublished}{\url{https://www.cityjson.org/datasets/}}
+    \endentry
+    \entry{roba}{misc}{}
+      \field{sortinit}{}
+      \field{sortinithash}{495dc9894017a8b12cafa9c619d10c0c}
+      \field{howpublished}{\url{https://datatracker.ietf.org/doc/html/rfc7946}}
+    \endentry
+    \entry{open}{misc}{}
+      \field{sortinit}{}
+      \field{sortinithash}{495dc9894017a8b12cafa9c619d10c0c}
+      \field{howpublished}{\url{https://github.com/ignacioarnaldo/OpenStreetMap2Graph}}
+    \endentry
     \entry{2021geo}{misc}{}
       \name{author}{4}{}{%
         {{hash=a55f31e19939af212d8e498666602095}{%

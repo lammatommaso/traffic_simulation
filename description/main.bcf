@@ -1928,8 +1928,11 @@
     <bcf:citekey order="3">materialize</bcf:citekey>
     <bcf:citekey order="4">sigmajs</bcf:citekey>
     <bcf:citekey order="5">gexf</bcf:citekey>
-    <bcf:citekey order="6">barcodes</bcf:citekey>
-    <bcf:citekey order="7">2021geo</bcf:citekey>
+    <bcf:citekey order="6">cityjson</bcf:citekey>
+    <bcf:citekey order="7">roba</bcf:citekey>
+    <bcf:citekey order="8">open</bcf:citekey>
+    <bcf:citekey order="9">barcodes</bcf:citekey>
+    <bcf:citekey order="10">2021geo</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">

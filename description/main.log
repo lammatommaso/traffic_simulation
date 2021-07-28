@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2021.7.9)  28 JUL 2021 12:30
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2021.7.9)  28 JUL 2021 19:05
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1488,16 +1488,16 @@ l.119 ...alizzare i percorsi compiuti da queste. }
                                                   
 ? 
 ) (./sviluppi.tex
-Underfull \hbox (badness 10000) in paragraph at lines 13--21
+Underfull \hbox (badness 10000) in paragraph at lines 10--18
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 13--21
+Underfull \hbox (badness 10000) in paragraph at lines 10--18
 
  []
 
-[15]) (./conclusioni.tex [16]) [17]
+[15] [16]) (./conclusioni.tex) [17]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 80.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 80.
  (./main.aux)
@@ -1510,10 +1510,10 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 27109 strings out of 494912
- 486798 string characters out of 6180267
- 893870 words of memory out of 5000000
- 29843 multiletter control sequences out of 15000+600000
+ 27118 strings out of 494912
+ 487062 string characters out of 6180267
+ 892989 words of memory out of 5000000
+ 29849 multiletter control sequences out of 15000+600000
  12670 words of font info for 49 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  55i,8n,54p,953b,1848s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1531,10 +1531,10 @@ s/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/
 share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/share/t
 exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on main.pdf (17 pages, 1565615 bytes).
+Output written on main.pdf (17 pages, 1567660 bytes).
 PDF statistics:
- 435 PDF objects out of 1000 (max. 8388607)
- 377 compressed objects within 4 object streams
- 135 named destinations out of 1000 (max. 500000)
+ 444 PDF objects out of 1000 (max. 8388607)
+ 386 compressed objects within 4 object streams
+ 138 named destinations out of 1000 (max. 500000)
  247 words of extra memory for PDF output out of 10000 (max. 10000000)
 
